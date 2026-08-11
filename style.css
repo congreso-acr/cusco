@@ -113,7 +113,7 @@ h1, h2, h3, h4 {
     position: relative;
     display: flex;
     align-items: center;
-    background-image: url('file:///C:/Users/MSI GF63/.gemini/antigravity/brain/ac006522-45f6-41ca-9c34-b30c2aaeb7f5/hero_bg_1786200673170.jpg');
+    background-image: url('hero_bg_1786200673170.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
