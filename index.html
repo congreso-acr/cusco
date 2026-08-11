@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>III Congreso Nacional de Áreas de Conservación Regional</title>
+    <meta name="description" content="Únete al III Congreso Nacional en Cusco del 6 al 9 de septiembre. Conservación, biodiversidad y nuevas iniciativas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Conservación Cusco</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre">El Congreso</a></li>
+                <li><a href="#programa">Programa</a></li>
+                <li><a href="#materiales">Ponencias</a></li>
+            </ul>
+            <a href="#registro" class="btn-primary nav-btn">Inscribirse</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <div class="inca-accent"></div>
+            <h1>III Congreso Nacional de<br>Áreas de Conservación Regional</h1>
+            <p class="hero-subtitle">Generando iniciativas para la gestión de nuestro patrimonio natural.</p>
+            <div class="event-details">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 6 al 9 de Septiembre</span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Cusco, Perú</span>
+            </div>
+            <a href="#programa" class="btn-primary mt-2">Ver Programa</a>
+        </div>
+    </header>
+
+    <!-- Sobre el congreso -->
+    <section id="sobre" class="about-section">
+        <div class="container layout-split">
+            <div class="about-text reveal">
+                <div class="inca-accent-small"></div>
+                <h2>Un Espacio para el Cambio</h2>
+                <p>Este congreso es un encuentro académico de alto nivel diseñado para debatir, analizar y crear soluciones. A través de <strong>ponencias de expertos</strong> y <strong>mesas de trabajo</strong>, buscamos que nazcan iniciativas reales de cambio en los lineamientos para la gestión de áreas de conservación regional en el Perú.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Ponencias</h3>
+                        <p>Investigaciones y estudios de caso sobre biodiversidad.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Mesas de Trabajo</h3>
+                        <p>Debates enfocados en políticas y gestión ambiental.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Noche Cultural</h3>
+                        <p>Celebrando la rica herencia y cultura del Cusco.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image reveal">
+                <img src="C:/Users/MSI GF63/.gemini/antigravity/brain/ac006522-45f6-41ca-9c34-b30c2aaeb7f5/gallito_rocas_1786200693963.jpg" alt="Gallito de las rocas">
+                <div class="image-caption">Gallito de las Rocas (Rupicola peruvianus)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fauna Representativa -->
+    <section id="fauna" class="fauna-section">
+        <div class="inca-pattern-bg"></div>
+        <div class="container reveal">
+            <div class="section-header center">
+                <h2>Fauna Representativa de Cusco</h2>
+                <p>Protegiendo a nuestros guardianes andinos y amazónicos.</p>
+            </div>
+            <div class="fauna-grid">
+                <div class="fauna-card">
+                    <div class="img-wrapper">
+                        <img src="C:/Users/MSI GF63/.gemini/antigravity/brain/ac006522-45f6-41ca-9c34-b30c2aaeb7f5/spectacled_bear_1786200684369.jpg" alt="Oso de Anteojos">
+                    </div>
+                    <h3>Oso de Anteojos</h3>
+                    <p>El único oso de Sudamérica, vital para los bosques nublados.</p>
+                </div>
+                <div class="fauna-card list-card">
+                    <h3>Otras especies clave:</h3>
+                    <ul class="species-list">
+                        <li><strong>Puma:</strong> Símbolo andino de fuerza y equilibrio.</li>
+                        <li><strong>Vicuña:</strong> Tesoro de las alturas y la conservación.</li>
+                        <li><strong>Cóndor Andino:</strong> El majestuoso señor de los cielos.</li>
+                        <li><strong>Zorro Andino:</strong> Astuto habitante de la puna.</li>
+                        <li><strong>Jaguar:</strong> Depredador cúspide de la zona amazónica de Cusco.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programa Oficial -->
+    <section id="programa" class="program-section">
+        <div class="container reveal">
+            <div class="section-header center">
+                <div class="inca-accent-small" style="margin: 0 auto 1rem;"></div>
+                <h2>Programa Oficial</h2>
+                <p>Actividades, ponencias y mesas de trabajo</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-target="dia1">Día 1 (06 Sep)</button>
+                <button class="tab-btn" data-target="dia2">Día 2 (07 Sep)</button>
+                <button class="tab-btn" data-target="dia3">Día 3 (08 Sep)</button>
+                <button class="tab-btn" data-target="dia4">Día 4 (09 Sep)</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- DÍA 1 -->
+                <div id="dia1" class="schedule-pane active">
+                    <h3 class="pane-title">Experiencia territorial: Visita al ACR Tres Cañones</h3>
+                    <div class="schedule-item"><div class="time">04:00</div><div class="details"><h4>Concentración y salida de delegaciones</h4><p>Recepción y abordaje para traslado al ACR Tres Cañones.</p></div></div>
+                    <div class="schedule-item"><div class="time">04:30</div><div class="details"><h4>Traslado al ACR Tres Cañones</h4><p>Salida oficial hacia el ámbito del ACR.</p></div></div>
+                    <div class="schedule-item"><div class="time">09:30</div><div class="details"><h4>Recepción territorial y bienvenida</h4><p>Recepción institucional y LUNCH.</p></div></div>
+                    <div class="schedule-item"><div class="time">10:00</div><div class="details"><h4>Ceremonia de inauguración y ofrenda a la tierra</h4><p>Acto protocolar en Mirador Tres Cañones.</p></div></div>
+                    <div class="schedule-item"><div class="time">11:00</div><div class="details"><h4>BREAK (Visita técnica)</h4><p>Interpretación territorial sobre conservación y biodiversidad.</p></div></div>
+                    <div class="schedule-item"><div class="time">Simultáneo</div><div class="details"><h4>Feria ecodeportiva y Recorrido por el ACR</h4><p>Exhibición de emprendimientos, productos locales y gastronomía.</p></div></div>
+                    <div class="schedule-item"><div class="time">13:30</div><div class="details"><h4>Almuerzo de confraternidad</h4></div></div>
+                    <div class="schedule-item"><div class="time">15:00</div><div class="details"><h4>Retorno a Cusco</h4></div></div>
+                    <div class="schedule-item"><div class="time">20:00</div><div class="details"><h4>Llegada de delegaciones</h4></div></div>
+                </div>
+                
+                <!-- DÍA 2 -->
+                <div id="dia2" class="schedule-pane">
+                    <h3 class="pane-title">Fortalecimiento institucional y gestión de las ACR</h3>
+                    <div class="schedule-item"><div class="time">08:00</div><div class="details"><h4>Registro y acreditación</h4><p>Ingreso principal / Sala Ollantaytambo.</p></div></div>
+                    <div class="schedule-item"><div class="time">08:30</div><div class="details"><h4>Inauguración oficial del III Congreso Nacional</h4><p>Acto protocolar y palabras de autoridades (GORE Cusco, SERNANP, MINAM, etc.).</p></div></div>
+                    <div class="schedule-item"><div class="time">09:10</div><div class="details"><h4>Fotografía oficial del congreso</h4></div></div>
+                    <div class="schedule-item"><div class="time">09:15</div><div class="details"><h4>Presentación de objetivos y ejes temáticos</h4></div></div>
+                    <div class="schedule-item highlight"><div class="time">09:30</div><div class="details"><h4>CONFERENCIA: Las ACR en el Perú</h4><p>Estado situacional y desafíos pendientes (Red Cajamarca).</p></div></div>
+                    <div class="schedule-item"><div class="time">10:00</div><div class="details"><h4>Mesa de Autoridades Nacional</h4><p>Identificar desafíos nacionales y definir prioridades institucionales.</p></div></div>
+                    <div class="schedule-item"><div class="time">10:45</div><div class="details"><h4>Presentación de conclusiones del diálogo</h4></div></div>
+                    <div class="schedule-item"><div class="time">11:00</div><div class="details"><h4>Coffee Break</h4></div></div>
+                    <div class="schedule-item highlight"><div class="time">11:20</div><div class="details"><h4>PONENCIA: Marco normativo de las ACR</h4><p>Retos y propuestas para su mejora e implementación (SERNANP).</p></div></div>
+                    <div class="schedule-item"><div class="time">11:35</div><div class="details"><h4>Compatibilidad y opinión vinculante (SENACE)</h4></div></div>
+                    <div class="schedule-item"><div class="time">11:50</div><div class="details"><h4>Instrumentos normativos para gestión de ACR</h4><p>Experiencia del GORE Loreto.</p></div></div>
+                    <div class="schedule-item"><div class="time">12:20</div><div class="details"><h4>PANEL DE DIÁLOGO</h4><p>¿Qué ajustes normativos e institucionales requiere el sistema nacional de ACR?</p></div></div>
+                    <div class="schedule-item"><div class="time">13:00</div><div class="details"><h4>ALMUERZO</h4></div></div>
+                    <div class="schedule-item highlight"><div class="time">14:30</div><div class="details"><h4>PONENCIA: Perspectivas nacionales para la gestión de amenazas</h4><p>MINAM - Dirección General de Diversidad Biológica.</p></div></div>
+                    <div class="schedule-item"><div class="time">14:45</div><div class="details"><h4>Acciones de control y respuesta</h4><p>Tala ilegal y deforestación (ACR Bosques Húmedos), Minería ilegal (ACR Carpish), Tecnologías de monitoreo (ACR Chuyapi Urusayhua).</p></div></div>
+                    <div class="schedule-item"><div class="time">15:45</div><div class="details"><h4>PANEL DE DISCUSIÓN</h4><p>¿Cómo fortalecer la vigilancia, control y respuesta ante amenazas?</p></div></div>
+                    <div class="schedule-item"><div class="time">16:50</div><div class="details"><h4>Suscripción de Convenio de Cooperación</h4><p>GORE Cusco – San Diego Zoo Wildlife Alliance.</p></div></div>
+                    <div class="schedule-item"><div class="time">18:00</div><div class="details"><h4>Noche cultural e identidad territorial</h4><p>Presentaciones artísticas inspiradas en danzas de Paucartambo.</p></div></div>
+                </div>
+
+                <!-- DÍA 3 -->
+                <div id="dia3" class="schedule-pane">
+                    <h3 class="pane-title">Gobernanza territorial y sostenibilidad</h3>
+                    <div class="schedule-item"><div class="time">08:00</div><div class="details"><h4>Registro y recepción</h4></div></div>
+                    <div class="schedule-item highlight"><div class="time">08:40</div><div class="details"><h4>PONENCIA: Gobernanza territorial para la gestión efectiva</h4><p>Experiencia de Tacna.</p></div></div>
+                    <div class="schedule-item"><div class="time">08:55</div><div class="details"><h4>Articulación entre gobiernos locales</h4></div></div>
+                    <div class="schedule-item"><div class="time">09:40</div><div class="details"><h4>PANEL DE DISCUSIÓN</h4><p>¿Cómo fortalecer la gobernanza territorial para consolidar las ACR?</p></div></div>
+                    <div class="schedule-item"><div class="time">10:30</div><div class="details"><h4>Coffee break</h4></div></div>
+                    <div class="schedule-item highlight"><div class="time">10:50</div><div class="details"><h4>PONENCIA: Nuevas oportunidades para la sostenibilidad financiera</h4><p>Cooperación internacional (KFW).</p></div></div>
+                    <div class="schedule-item"><div class="time">11:05</div><div class="details"><h4>Mecanismos de retribución por servicios ecosistémicos (MERESE)</h4></div></div>
+                    <div class="schedule-item"><div class="time">11:50</div><div class="details"><h4>PANEL DE DISCUSIÓN</h4><p>Mecanismos innovadores para fortalecer la sostenibilidad financiera.</p></div></div>
+                    <div class="schedule-item"><div class="time">13:00</div><div class="details"><h4>ALMUERZO</h4></div></div>
+                    <div class="schedule-item"><div class="time">14:00</div><div class="details"><h4>Foro de Cooperación</h4><p>Oportunidades para fortalecer las ACR (Re:wild, ACCA, PROFONANPE, etc.).</p></div></div>
+                    <div class="schedule-item highlight"><div class="time">14:40</div><div class="details"><h4>Intervención especial: Marco Global de Biodiversidad</h4><p>UNEP.</p></div></div>
+                    <div class="schedule-item"><div class="time">15:15</div><div class="details"><h4>Experiencias de negocios verdes y bioeconomía</h4></div></div>
+                    <div class="schedule-item"><div class="time">16:00</div><div class="details"><h4>PANEL DE DISCUSIÓN</h4><p>¿Cómo fortalecer la bioeconomía y el acceso a mercados?</p></div></div>
+                    <div class="schedule-item"><div class="time">17:45</div><div class="details"><h4>Mesas de trabajo temáticas</h4><p>Construcción de acuerdos nacionales.</p></div></div>
+                    <div class="schedule-item"><div class="time">18:30</div><div class="details"><h4>Plenaria: Declaración del Cusco</h4><p>Presentación, consolidación y validación de acuerdos.</p></div></div>
+                </div>
+
+                <!-- DÍA 4 -->
+                <div id="dia4" class="schedule-pane">
+                    <h3 class="pane-title">Conservación inclusiva, investigación y clausura</h3>
+                    <div class="schedule-item"><div class="time">08:00</div><div class="details"><h4>Registro y recepción</h4></div></div>
+                    <div class="schedule-item"><div class="time">08:30</div><div class="details"><h4>Liderazgo comunitario para la conservación</h4></div></div>
+                    <div class="schedule-item"><div class="time">08:45</div><div class="details"><h4>Mujeres conservacionistas</h4></div></div>
+                    <div class="schedule-item"><div class="time">09:15</div><div class="details"><h4>PANEL DE DISCUSIÓN</h4><p>Participación social e inclusión.</p></div></div>
+                    <div class="schedule-item"><div class="time">09:35</div><div class="details"><h4>Tecnologías aplicadas al monitoreo</h4></div></div>
+                    <div class="schedule-item"><div class="time">09:50</div><div class="details"><h4>Propagación y restauración</h4><p>Restauración de ecosistemas degradados con especies nativas.</p></div></div>
+                    <div class="schedule-item"><div class="time">10:20</div><div class="details"><h4>PANEL DE DISCUSIÓN</h4><p>Investigación, monitoreo e innovación para la gestión adaptativa.</p></div></div>
+                    <div class="schedule-item"><div class="time">11:20</div><div class="details"><h4>Acto protocolar de transferencia</h4><p>Presidencia de la Red Nacional de ACR al GORE Cusco.</p></div></div>
+                    <div class="schedule-item"><div class="time">11:55</div><div class="details"><h4>Declaración del Cusco</h4><p>Suscripción final de la declaración.</p></div></div>
+                    <div class="schedule-item"><div class="time">12:35</div><div class="details"><h4>Proceso de elección</h4><p>Sede del IV Congreso Nacional de ACR (2027).</p></div></div>
+                    <div class="schedule-item"><div class="time">13:00</div><div class="details"><h4>ALMUERZO y Feria de experiencias</h4></div></div>
+                    <div class="schedule-item"><div class="time">15:55</div><div class="details"><h4>Palabras de clausura</h4><p>Vicegobernadora Regional de Cusco.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materiales y Ponencias -->
+    <section id="materiales" class="materials-section">
+        <div class="container reveal">
+            <div class="section-header center">
+                <div class="inca-accent-small" style="margin: 0 auto 1rem;"></div>
+                <h2>Repositorio de Ponencias</h2>
+                <p>Aquí se publicarán próximamente las diapositivas y resúmenes de las presentaciones académicas.</p>
+            </div>
+            
+            <div class="materials-grid">
+                <!-- Template for materials -->
+                <div class="material-card">
+                    <div class="material-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <div class="material-content">
+                        <h4>Las ACR en el Perú: Estado situacional</h4>
+                        <p class="author">Red Cajamarca</p>
+                        <div class="tags">
+                            <span class="tag">Día 2</span>
+                            <span class="tag">Conferencia</span>
+                        </div>
+                    </div>
+                    <div class="material-actions">
+                        <button class="btn-download disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <div class="material-content">
+                        <h4>Marco normativo de las ACR</h4>
+                        <p class="author">SERNANP</p>
+                        <div class="tags">
+                            <span class="tag">Día 2</span>
+                            <span class="tag">Ponencia</span>
+                        </div>
+                    </div>
+                    <div class="material-actions">
+                        <button class="btn-download disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+                
+                <div class="material-card">
+                    <div class="material-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <div class="material-content">
+                        <h4>Gobernanza territorial para la gestión efectiva</h4>
+                        <p class="author">GORE Tacna</p>
+                        <div class="tags">
+                            <span class="tag">Día 3</span>
+                            <span class="tag">Ponencia</span>
+                        </div>
+                    </div>
+                    <div class="material-actions">
+                        <button class="btn-download disabled" disabled>Próximamente</button>
+                    </div>
+                </div>
+            </div>
+            <div class="materials-notice">
+                <p><em>* Todos los materiales estarán disponibles para su descarga una vez finalizado cada bloque del congreso.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="inca-border-top"></div>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>III Congreso Nacional</h3>
+                <p>Construyendo el futuro de la conservación regional.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#registro">Contacto</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
