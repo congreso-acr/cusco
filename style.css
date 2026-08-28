@@ -1,22 +1,33 @@
 :root {
-    /* Colors - Naturalistic & Earthy */
-    --color-bg: #F7F6F2;
-    --color-bg-alt: #E8E3D9;
-    --color-text: #2C3531;
-    --color-forest: #1A3626;
-    --color-sage: #8E9B83;
-    --color-terracotta: #C47355;
-    --color-gold: #D97706;
-    --color-emerald: #059669;
-    --color-teal: #0D9488;
-    --color-purple: #7C3AED;
+    /* Nueva Línea Gráfica Institucional - GORE Cusco & Congreso ACR */
+    --color-primary: #8C182B;        /* Granate / Guinda Oficial Cusco */
+    --color-primary-dark: #68101F;   /* Granate Profundo */
+    --color-primary-light: #A82438;  /* Granate Claro */
+    --color-accent: #E5A823;         /* Dorado Solar / Ocre cálido del Logo */
+    --color-accent-dark: #C68A12;    /* Dorado Oscuro */
     
-    /* Typography */
+    /* Fondos y Neutros */
+    --color-bg: #FFFFFF;             /* Blanco puro de fondo */
+    --color-bg-alt: #F8F9FA;         /* Plomo muy suave para contraste */
+    --color-gray-100: #F1F3F5;       /* Plomo claro */
+    --color-gray-200: #E9ECEF;       /* Plomo bordes sutiles */
+    --color-gray-300: #DEE2E6;       /* Plomo bordes */
+    --color-gray-700: #495057;       /* Plomo texto secundario */
+    --color-text: #212529;           /* Carbón texto principal */
+    
+    /* Colores Específicos para ACRs */
+    --color-choquequirao: #8C182B;
+    --color-trescanones: #D97706;
+    --color-ausangate: #059669;
+    --color-chuyapi: #0D9488;
+    --color-qeros: #7C3AED;
+    
+    /* Tipografía */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     
     /* Layout */
-    --max-width: 1200px;
+    --max-width: 1240px;
 }
 
 * {
@@ -38,7 +49,7 @@ body {
 
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    color: var(--color-forest);
+    color: var(--color-primary);
 }
 
 .container {
@@ -47,41 +58,53 @@ h1, h2, h3, h4 {
     padding: 5rem 2rem;
 }
 
-/* Glassmorphism Navbar */
+/* ==========================================================================
+   NAVBAR INSTITUCIONAL
+   ========================================================================== */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(247, 246, 242, 0.88);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid var(--color-gray-200);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
 }
 
 .nav-content {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: var(--color-forest);
+.logo-link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: -0.5px;
+}
+
+.nav-logo-gore {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.nav-logo-gore:hover {
+    transform: scale(1.02);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 1.8rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -94,7 +117,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--color-terracotta);
+    color: var(--color-primary);
 }
 
 .nav-links a.active::after {
@@ -104,14 +127,14 @@ h1, h2, h3, h4 {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--color-terracotta);
+    background: var(--color-primary);
     border-radius: 2px;
 }
 
 .btn-primary {
     display: inline-block;
     padding: 0.75rem 1.6rem;
-    background-color: var(--color-terracotta);
+    background-color: var(--color-primary);
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -125,14 +148,16 @@ h1, h2, h3, h4 {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(196, 115, 85, 0.4);
-    background-color: #b06245;
+    box-shadow: 0 6px 20px rgba(140, 24, 43, 0.35);
+    background-color: var(--color-primary-dark);
+    color: white;
 }
 
-/* Hero Section */
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .hero {
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -140,12 +165,13 @@ h1, h2, h3, h4 {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    padding-top: 5rem;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(26, 54, 38, 0.92) 0%, rgba(26, 54, 38, 0.6) 60%, rgba(26, 54, 38, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(140, 24, 43, 0.92) 0%, rgba(104, 16, 31, 0.85) 50%, rgba(33, 37, 41, 0.75) 100%);
 }
 
 .hero-content {
@@ -153,56 +179,105 @@ h1, h2, h3, h4 {
     z-index: 10;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 2rem;
     color: white;
 }
 
-.hero h1 {
-    font-size: clamp(2.4rem, 5vw, 4.2rem);
-    color: white;
-    line-height: 1.15;
-    margin-bottom: 1.2rem;
-    font-weight: 800;
+.hero-logo-card {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    display: inline-block;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    max-width: 680px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.hero-logo-main {
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+    display: block;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 650px;
+    font-size: 1.25rem;
+    max-width: 720px;
     margin-bottom: 2rem;
     opacity: 0.95;
     font-weight: 300;
+    line-height: 1.6;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .event-details {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 2.2rem;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
 }
 
-.event-details span {
+.event-badge {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.7rem;
     font-weight: 600;
-    background: rgba(255,255,255,0.12);
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 0.95rem;
+}
+
+.event-location-link {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    max-width: 750px;
+}
+
+.event-location-link:hover {
+    background: rgba(255, 255, 255, 0.32);
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.event-location-link .maps-badge {
+    background: var(--color-accent);
+    color: #1E293B;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    margin-left: 0.4rem;
+    white-space: nowrap;
 }
 
 .inca-accent {
     width: 60px;
     height: 6px;
-    background-color: var(--color-terracotta);
+    background-color: var(--color-accent);
     margin-bottom: 1.5rem;
-    clip-path: polygon(0 100%, 0 0, 20% 0, 20% 40%, 40% 40%, 40% 0, 60% 0, 60% 40%, 80% 40%, 80% 0, 100% 0, 100% 100%);
 }
 .inca-accent-small {
     width: 40px;
     height: 4px;
-    background-color: var(--color-terracotta);
+    background-color: var(--color-accent);
     margin-bottom: 1rem;
 }
 
@@ -210,9 +285,9 @@ h1, h2, h3, h4 {
 .subpage-hero {
     position: relative;
     padding: 8.5rem 0 4.5rem 0;
-    background: linear-gradient(135deg, var(--color-forest) 0%, #224732 100%);
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
     color: white;
-    border-bottom: 4px solid var(--color-terracotta);
+    border-bottom: 4px solid var(--color-accent);
 }
 .subpage-hero h1 {
     color: white;
@@ -220,7 +295,7 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 .subpage-hero .hero-subtitle {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.92);
     max-width: 750px;
     font-size: 1.15rem;
 }
@@ -234,23 +309,30 @@ h1, h2, h3, h4 {
 .pill-btn {
     display: inline-block;
     padding: 0.55rem 1.2rem;
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.15);
     color: white;
     text-decoration: none;
     border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.3);
     transition: all 0.3s ease;
 }
 .pill-btn:hover {
-    background: var(--color-terracotta);
-    border-color: var(--color-terracotta);
+    background: var(--color-accent);
+    color: #1E293B;
+    border-color: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(196, 115, 85, 0.4);
+    box-shadow: 0 4px 15px rgba(229, 168, 35, 0.4);
 }
 
-/* About Section */
+/* ==========================================================================
+   SECCIÓN SOBRE EL CONGRESO
+   ========================================================================== */
+.about-section {
+    background: var(--color-bg);
+}
+
 .layout-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -261,6 +343,7 @@ h1, h2, h3, h4 {
 .about-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    color: var(--color-primary);
 }
 
 .features-grid {
@@ -271,22 +354,34 @@ h1, h2, h3, h4 {
 }
 
 .feature-card {
-    background: white;
+    background: var(--color-bg-alt);
     padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--color-sage);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border-radius: 10px;
+    border-left: 4px solid var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-top: 1px solid var(--color-gray-200);
+    border-right: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
     transition: transform 0.3s ease;
 }
 .feature-card:hover {
-    transform: translateX(10px);
+    transform: translateX(8px);
+}
+.feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-primary);
+}
+.feature-card p {
+    color: var(--color-gray-700);
 }
 
 .about-image {
     position: relative;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(26, 54, 38, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-gray-200);
 }
 
 .about-image img {
@@ -296,7 +391,7 @@ h1, h2, h3, h4 {
     transition: transform 0.7s;
 }
 .about-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .image-caption {
@@ -304,17 +399,19 @@ h1, h2, h3, h4 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(26,54,38,0.85);
+    background: rgba(140, 24, 43, 0.92);
     color: white;
-    padding: 0.8rem;
-    font-size: 0.85rem;
+    padding: 0.9rem;
+    font-size: 0.88rem;
     text-align: center;
     backdrop-filter: blur(6px);
 }
 
-/* Fauna Section in Main Page */
+/* ==========================================================================
+   FAUNA Y BIODIVERSIDAD
+   ========================================================================== */
 .fauna-section {
-    background-color: var(--color-forest);
+    background-color: var(--color-primary-dark);
     color: white;
     position: relative;
 }
@@ -326,8 +423,8 @@ h1, h2, h3, h4 {
 .inca-pattern-bg {
     position: absolute;
     inset: 0;
-    opacity: 0.05;
-    background-image: radial-gradient(var(--color-bg) 2px, transparent 2px);
+    opacity: 0.04;
+    background-image: radial-gradient(#FFFFFF 2px, transparent 2px);
     background-size: 30px 30px;
 }
 
@@ -349,10 +446,10 @@ h1, h2, h3, h4 {
 }
 
 .fauna-card {
-    background: rgba(255,255,255,0.06);
-    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
 }
 .fauna-card .img-wrapper {
     height: 300px;
@@ -368,7 +465,7 @@ h1, h2, h3, h4 {
 }
 .fauna-card p {
     padding: 0 1.5rem 1.5rem;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .list-card {
@@ -379,7 +476,7 @@ h1, h2, h3, h4 {
 }
 .list-card h3 {
     padding: 0 0 1.5rem 0;
-    color: var(--color-terracotta);
+    color: var(--color-accent);
 }
 .species-list {
     list-style: none;
@@ -391,7 +488,7 @@ h1, h2, h3, h4 {
 }
 .species-list li::before {
     content: "■";
-    color: var(--color-sage);
+    color: var(--color-accent);
     position: absolute;
     left: 0;
     top: 2px;
@@ -405,11 +502,171 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   SECCIÓN MAPA INTERACTIVO (acrs.html)
+   PROGRAMA OFICIAL
+   ========================================================================== */
+.program-section {
+    background: var(--color-bg-alt);
+}
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+}
+.tab-btn {
+    padding: 0.85rem 1.8rem;
+    background: white;
+    border: 2px solid var(--color-gray-300);
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.tab-btn.active, .tab-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 18px rgba(140, 24, 43, 0.3);
+}
+
+.tab-content {
+    max-width: 950px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-gray-200);
+}
+
+.schedule-pane {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+.schedule-pane.active {
+    display: block;
+}
+.pane-title {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-gray-200);
+    color: var(--color-primary);
+    font-size: 1.35rem;
+}
+
+.schedule-item {
+    display: flex;
+    gap: 2rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+.schedule-item:last-child {
+    border-bottom: none;
+}
+.schedule-item.highlight {
+    background-color: #FFF8E7;
+    padding: 1.4rem;
+    border-radius: 10px;
+    margin: 0.8rem 0;
+    border-left: 4px solid var(--color-accent);
+    border-bottom: none;
+}
+.schedule-item .time {
+    font-weight: 800;
+    color: var(--color-primary);
+    min-width: 110px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+}
+.schedule-item.highlight .time {
+    color: var(--color-primary-dark);
+}
+.schedule-item h4 {
+    margin-bottom: 0.35rem;
+    font-size: 1.1rem;
+    color: var(--color-text);
+}
+.schedule-item p {
+    font-size: 0.95rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   SECCIÓN DE UBICACIÓN Y MAPA GOOGLE MAPS
+   ========================================================================== */
+.location-section {
+    background: white;
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+    background: var(--color-bg-alt);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid var(--color-gray-300);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.location-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.location-address {
+    margin-bottom: 1.5rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.location-details-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+.location-details-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+.location-details-list svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.map-embed-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border: 1px solid var(--color-gray-300);
+}
+.map-embed-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   MAPA SVG INTERACTIVO Y FICHAS ACRs (acrs.html)
    ========================================================================== */
 .map-section {
     background: white;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid var(--color-gray-200);
 }
 
 .map-interactive-container {
@@ -417,11 +674,11 @@ h1, h2, h3, h4 {
     grid-template-columns: 2.2fr 1fr;
     gap: 3rem;
     align-items: center;
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
     padding: 2.5rem;
     border-radius: 16px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.04);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--color-gray-300);
 }
 
 .map-wrapper {
@@ -431,13 +688,12 @@ h1, h2, h3, h4 {
     background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid var(--color-gray-300);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Inline SVG Map Styling */
 .interactive-svg-map {
     width: 100%;
     height: 100%;
@@ -446,9 +702,6 @@ h1, h2, h3, h4 {
     cursor: default;
 }
 
-/* ==========================================================================
-   POLÍGONOS INTERACTIVOS (FOREGROUND)
-   ========================================================================== */
 .map-acr-polygon {
     cursor: pointer;
     outline: none;
@@ -462,18 +715,14 @@ h1, h2, h3, h4 {
     transition: all 0.3s ease;
 }
 
-/* Resalte de Polígonos con Borde Blanco Fino (1.2px) y Halo */
 .map-acr-polygon:hover path,
 .map-acr-polygon:focus path,
 .map-acr-polygon.active-highlight path {
-    filter: drop-shadow(0 0 18px rgba(196, 115, 85, 0.95)) brightness(1.28);
+    filter: drop-shadow(0 0 18px rgba(140, 24, 43, 0.95)) brightness(1.28);
     stroke: #FFFFFF !important;
     stroke-width: 1.2px !important;
 }
 
-/* ==========================================================================
-   BOTONES / BADGES ESTÉTICOS SOBRE EL MAPA SVG (Posición Fija, Cero Saltos)
-   ========================================================================== */
 .map-acr-badge {
     cursor: pointer;
     outline: none;
@@ -482,16 +731,15 @@ h1, h2, h3, h4 {
 }
 
 .map-acr-badge g {
-    /* NO CSS transform to guarantee zero pixel movement */
     transition: filter 0.25s ease;
 }
 
 .badge-bg-rect {
     fill: #ffffff;
-    fill-opacity: 0.97;
-    stroke: rgba(0, 0, 0, 0.22);
+    fill-opacity: 0.98;
+    stroke: rgba(0, 0, 0, 0.2);
     stroke-width: 5px;
-    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.2));
     transition: stroke 0.25s ease, stroke-width 0.25s ease, fill 0.25s ease, filter 0.25s ease;
 }
 
@@ -502,62 +750,61 @@ h1, h2, h3, h4 {
     transition: fill 0.25s ease;
 }
 
-/* Hover: El botón se agranda sutilmente en su MISMO lugar aumentando borde perimetral y halo */
 .map-acr-badge:hover .badge-bg-rect,
 .map-acr-badge:focus .badge-bg-rect,
 .map-acr-badge.active-highlight .badge-bg-rect {
     fill: #ffffff;
-    stroke-width: 16px; /* Expansión perimetral simétrica */
+    stroke-width: 16px;
 }
 
 .badge-choquequirao:hover .badge-bg-rect,
 .badge-choquequirao.active-highlight .badge-bg-rect {
-    stroke: var(--color-terracotta);
-    filter: drop-shadow(0 0 32px rgba(196, 115, 85, 0.9));
+    stroke: var(--color-choquequirao);
+    filter: drop-shadow(0 0 32px rgba(140, 24, 43, 0.9));
 }
 .badge-choquequirao:hover .badge-text,
 .badge-choquequirao.active-highlight .badge-text {
-    fill: var(--color-terracotta);
+    fill: var(--color-choquequirao);
 }
 
 .badge-trescanones:hover .badge-bg-rect,
 .badge-trescanones.active-highlight .badge-bg-rect {
-    stroke: var(--color-gold);
+    stroke: var(--color-trescanones);
     filter: drop-shadow(0 0 32px rgba(217, 119, 6, 0.9));
 }
 .badge-trescanones:hover .badge-text,
 .badge-trescanones.active-highlight .badge-text {
-    fill: var(--color-gold);
+    fill: var(--color-trescanones);
 }
 
 .badge-ausangate:hover .badge-bg-rect,
 .badge-ausangate.active-highlight .badge-bg-rect {
-    stroke: var(--color-emerald);
+    stroke: var(--color-ausangate);
     filter: drop-shadow(0 0 32px rgba(5, 150, 105, 0.9));
 }
 .badge-ausangate:hover .badge-text,
 .badge-ausangate.active-highlight .badge-text {
-    fill: var(--color-emerald);
+    fill: var(--color-ausangate);
 }
 
 .badge-chuyapi:hover .badge-bg-rect,
 .badge-chuyapi.active-highlight .badge-bg-rect {
-    stroke: var(--color-teal);
+    stroke: var(--color-chuyapi);
     filter: drop-shadow(0 0 32px rgba(13, 148, 136, 0.9));
 }
 .badge-chuyapi:hover .badge-text,
 .badge-chuyapi.active-highlight .badge-text {
-    fill: var(--color-teal);
+    fill: var(--color-chuyapi);
 }
 
 .badge-qeros:hover .badge-bg-rect,
 .badge-qeros.active-highlight .badge-bg-rect {
-    stroke: var(--color-purple);
+    stroke: var(--color-qeros);
     filter: drop-shadow(0 0 32px rgba(124, 58, 237, 0.9));
 }
 .badge-qeros:hover .badge-text,
 .badge-qeros.active-highlight .badge-text {
-    fill: var(--color-purple);
+    fill: var(--color-qeros);
 }
 
 /* Floating tooltip for map */
@@ -565,13 +812,13 @@ h1, h2, h3, h4 {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: rgba(26, 54, 38, 0.95);
+    background: rgba(104, 16, 31, 0.95);
     color: white;
     padding: 1rem 1.4rem;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 20;
@@ -583,7 +830,7 @@ h1, h2, h3, h4 {
     margin-bottom: 0.2rem;
 }
 .map-tooltip p {
-    color: var(--color-sage);
+    color: var(--color-accent);
     font-size: 0.88rem;
     margin-bottom: 0.4rem;
 }
@@ -600,14 +847,14 @@ h1, h2, h3, h4 {
     padding: 1.8rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid var(--color-gray-300);
 }
 .map-sidebar-legend h3 {
     font-size: 1.25rem;
     margin-bottom: 1.2rem;
     padding-bottom: 0.6rem;
-    border-bottom: 2px solid var(--color-bg-alt);
-    color: var(--color-forest);
+    border-bottom: 2px solid var(--color-gray-200);
+    color: var(--color-primary);
 }
 
 .legend-list {
@@ -622,16 +869,16 @@ h1, h2, h3, h4 {
     gap: 1rem;
     padding: 0.85rem 1rem;
     border-radius: 8px;
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
     transition: all 0.3s ease;
     border: 1px solid transparent;
     cursor: pointer;
 }
 .legend-item:hover, .legend-item.active {
     background: #fff;
-    border-color: var(--color-terracotta);
+    border-color: var(--color-primary);
     transform: translateX(4px);
-    box-shadow: 0 4px 15px rgba(196, 115, 85, 0.15);
+    box-shadow: 0 4px 15px rgba(140, 24, 43, 0.15);
 }
 
 .color-dot {
@@ -640,11 +887,11 @@ h1, h2, h3, h4 {
     border-radius: 50%;
     flex-shrink: 0;
 }
-.dot-choquequirao { background-color: var(--color-terracotta); }
-.dot-trescanones { background-color: var(--color-gold); }
-.dot-ausangate { background-color: var(--color-emerald); }
-.dot-chuyapi { background-color: var(--color-teal); }
-.dot-qeros { background-color: var(--color-purple); }
+.dot-choquequirao { background-color: var(--color-choquequirao); }
+.dot-trescanones { background-color: var(--color-trescanones); }
+.dot-ausangate { background-color: var(--color-ausangate); }
+.dot-chuyapi { background-color: var(--color-chuyapi); }
+.dot-qeros { background-color: var(--color-qeros); }
 
 .legend-info {
     flex-grow: 1;
@@ -652,16 +899,16 @@ h1, h2, h3, h4 {
 .legend-info strong {
     display: block;
     font-size: 0.95rem;
-    color: var(--color-forest);
+    color: var(--color-text);
 }
 .legend-info small {
     display: block;
-    color: #666;
+    color: var(--color-gray-700);
     font-size: 0.78rem;
 }
 .legend-link {
     font-size: 0.85rem;
-    color: var(--color-terracotta);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 700;
 }
@@ -670,7 +917,7 @@ h1, h2, h3, h4 {
    FICHAS DETALLADAS DE LAS ACRs (acrs.html)
    ========================================================================== */
 .acrs-detail-section {
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
 }
 
 .acr-card-detailed {
@@ -679,7 +926,7 @@ h1, h2, h3, h4 {
     padding: 3.5rem;
     margin-bottom: 4rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--color-gray-300);
     scroll-margin-top: 100px;
     transition: box-shadow 0.6s ease, transform 0.4s ease;
 }
@@ -687,8 +934,8 @@ h1, h2, h3, h4 {
     margin-bottom: 0;
 }
 .acr-card-detailed.highlight-pulse {
-    box-shadow: 0 0 40px rgba(196, 115, 85, 0.5);
-    border-color: var(--color-terracotta);
+    box-shadow: 0 0 40px rgba(140, 24, 43, 0.5);
+    border-color: var(--color-primary);
 }
 
 .acr-card-header {
@@ -696,11 +943,11 @@ h1, h2, h3, h4 {
 }
 .badge-creation {
     display: inline-block;
-    padding: 0.3rem 0.8rem;
-    background: rgba(26, 54, 38, 0.08);
-    color: var(--color-forest);
+    padding: 0.35rem 0.9rem;
+    background: rgba(140, 24, 43, 0.08);
+    color: var(--color-primary);
     border-radius: 20px;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 700;
     margin-bottom: 0.8rem;
 }
@@ -710,7 +957,7 @@ h1, h2, h3, h4 {
 }
 .acr-lead {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--color-gray-700);
 }
 
 /* Galería de 4 Fotos por ACR */
@@ -725,7 +972,7 @@ h1, h2, h3, h4 {
 
 .gallery-item {
     position: relative;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
@@ -752,12 +999,11 @@ h1, h2, h3, h4 {
     background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
     color: white;
     padding: 1.2rem 1rem 0.8rem 1rem;
-    font-size: 0.8rem;
-    line-height: 1.3;
+    font-size: 0.82rem;
+    line-height: 1.35;
     opacity: 0.95;
 }
 
-/* Grid de Información de ACR */
 .acr-content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -765,15 +1011,18 @@ h1, h2, h3, h4 {
 }
 
 .info-box {
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
     padding: 1.8rem;
-    border-radius: 10px;
-    border-left: 4px solid var(--color-sage);
+    border-radius: 12px;
+    border-left: 4px solid var(--color-primary);
+    border-top: 1px solid var(--color-gray-200);
+    border-right: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
 }
 .info-box h3 {
     font-size: 1.15rem;
     margin-bottom: 0.8rem;
-    color: var(--color-forest);
+    color: var(--color-primary);
 }
 .info-box ul {
     list-style: none;
@@ -784,14 +1033,14 @@ h1, h2, h3, h4 {
 }
 .info-box p {
     font-size: 0.95rem;
-    color: #444;
+    color: var(--color-gray-700);
 }
 
 /* ==========================================================================
    PANEL FOTOGRÁFICO DE ESPECIES (acrs.html)
    ========================================================================== */
 .species-panel-section {
-    background: var(--color-forest);
+    background: var(--color-primary-dark);
     color: white;
 }
 .species-panel-section h2 {
@@ -809,18 +1058,18 @@ h1, h2, h3, h4 {
 }
 
 .species-card {
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.08);
     border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
     display: flex;
     flex-direction: column;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .species-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    border-color: var(--color-terracotta);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    border-color: var(--color-accent);
 }
 
 .species-img-wrapper {
@@ -849,9 +1098,9 @@ h1, h2, h3, h4 {
     backdrop-filter: blur(6px);
     color: white;
 }
-.status-vu { background-color: rgba(217, 119, 6, 0.9); }
-.status-nt { background-color: rgba(202, 138, 4, 0.9); }
-.status-lc { background-color: rgba(5, 150, 105, 0.9); }
+.status-vu { background-color: rgba(217, 119, 6, 0.95); }
+.status-nt { background-color: rgba(202, 138, 4, 0.95); }
+.status-lc { background-color: rgba(5, 150, 105, 0.95); }
 
 .species-card-body {
     padding: 1.6rem;
@@ -872,7 +1121,7 @@ h1, h2, h3, h4 {
 }
 .quechua-name {
     font-family: var(--font-heading);
-    color: var(--color-sage);
+    color: var(--color-accent);
     font-weight: 700;
     font-size: 0.95rem;
 }
@@ -885,7 +1134,7 @@ h1, h2, h3, h4 {
 
 .species-desc {
     font-size: 0.92rem;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.88);
     line-height: 1.5;
     margin-bottom: 1.5rem;
     flex-grow: 1;
@@ -893,103 +1142,14 @@ h1, h2, h3, h4 {
 
 .species-meta {
     font-size: 0.82rem;
-    color: var(--color-sage);
+    color: var(--color-accent);
     padding-top: 0.8rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 /* ==========================================================================
-   SECCIONES DE CRONOGRAMA Y MATERIALES (index.html)
+   MATERIALES Y PONENCIAS
    ========================================================================== */
-.program-section {
-    background: var(--color-bg-alt);
-}
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-}
-.tab-btn {
-    padding: 0.8rem 1.5rem;
-    background: transparent;
-    border: 2px solid var(--color-sage);
-    color: var(--color-forest);
-    font-family: var(--font-heading);
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-.tab-btn.active, .tab-btn:hover {
-    background: var(--color-forest);
-    color: white;
-    border-color: var(--color-forest);
-}
-
-.tab-content {
-    max-width: 950px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 14px;
-    padding: 2.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.schedule-pane {
-    display: none;
-    animation: fadeIn 0.5s ease forwards;
-}
-.schedule-pane.active {
-    display: block;
-}
-.pane-title {
-    margin-bottom: 1.8rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--color-bg-alt);
-    color: var(--color-terracotta);
-    font-size: 1.35rem;
-}
-
-.schedule-item {
-    display: flex;
-    gap: 2rem;
-    padding: 1.3rem 0;
-    border-bottom: 1px solid var(--color-bg-alt);
-}
-.schedule-item:last-child {
-    border-bottom: none;
-}
-.schedule-item.highlight {
-    background-color: rgba(142, 155, 131, 0.12);
-    padding: 1.3rem;
-    border-radius: 8px;
-    margin: 0.6rem 0;
-    border-bottom: none;
-}
-.schedule-item .time {
-    font-weight: 700;
-    color: var(--color-forest);
-    min-width: 110px;
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-}
-.schedule-item.highlight .time {
-    color: var(--color-terracotta);
-}
-.schedule-item h4 {
-    margin-bottom: 0.3rem;
-    font-size: 1.08rem;
-    color: var(--color-forest);
-}
-.schedule-item p {
-    font-size: 0.95rem;
-    color: #4b5563;
-    line-height: 1.5;
-}
-
-/* Materials Section */
 .materials-section {
     background: white;
 }
@@ -1000,12 +1160,15 @@ h1, h2, h3, h4 {
     margin-top: 3rem;
 }
 .material-card {
-    background: var(--color-bg);
-    border-radius: 10px;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
     padding: 1.8rem;
     display: flex;
     flex-direction: column;
-    border-top: 4px solid var(--color-sage);
+    border-top: 4px solid var(--color-primary);
+    border-left: 1px solid var(--color-gray-200);
+    border-right: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .material-card:hover {
@@ -1013,7 +1176,7 @@ h1, h2, h3, h4 {
     box-shadow: 0 12px 25px rgba(0,0,0,0.06);
 }
 .material-icon {
-    color: var(--color-terracotta);
+    color: var(--color-primary);
     margin-bottom: 1rem;
 }
 .material-content {
@@ -1023,10 +1186,11 @@ h1, h2, h3, h4 {
     margin-bottom: 0.5rem;
     line-height: 1.3;
     font-size: 1.1rem;
+    color: var(--color-text);
 }
 .material-content .author {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-gray-700);
     margin-bottom: 1rem;
 }
 .tags {
@@ -1038,8 +1202,8 @@ h1, h2, h3, h4 {
 .tag {
     font-size: 0.75rem;
     padding: 0.25rem 0.65rem;
-    background: rgba(26, 54, 38, 0.1);
-    color: var(--color-forest);
+    background: rgba(140, 24, 43, 0.08);
+    color: var(--color-primary);
     border-radius: 20px;
     font-weight: 600;
 }
@@ -1047,7 +1211,7 @@ h1, h2, h3, h4 {
     width: 100%;
     padding: 0.8rem;
     border: none;
-    background: var(--color-forest);
+    background: var(--color-primary);
     color: white;
     border-radius: 6px;
     font-weight: 600;
@@ -1056,34 +1220,36 @@ h1, h2, h3, h4 {
     transition: background 0.3s;
 }
 .btn-download:hover:not(:disabled) {
-    background: var(--color-terracotta);
+    background: var(--color-primary-dark);
 }
 .btn-download.disabled {
-    background: #ccc;
-    color: #666;
+    background: var(--color-gray-300);
+    color: var(--color-gray-700);
     cursor: not-allowed;
 }
 .materials-notice {
     text-align: center;
     margin-top: 3rem;
-    color: #777;
+    color: var(--color-gray-700);
     font-size: 0.9rem;
 }
 
-/* Footer */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 .footer {
-    background: var(--color-forest);
+    background: #4A0C16;
     color: white;
     position: relative;
 }
 .inca-border-top {
-    height: 10px;
+    height: 8px;
     background: repeating-linear-gradient(
       90deg,
-      var(--color-terracotta),
-      var(--color-terracotta) 20px,
-      var(--color-sage) 20px,
-      var(--color-sage) 40px
+      var(--color-primary),
+      var(--color-primary) 20px,
+      var(--color-accent) 20px,
+      var(--color-accent) 40px
     );
 }
 .footer-content {
@@ -1105,11 +1271,11 @@ h1, h2, h3, h4 {
     margin-left: 1.5rem;
     text-decoration: none;
     opacity: 0.85;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, color 0.3s;
 }
 .footer-links a:hover {
     opacity: 1;
-    color: var(--color-terracotta);
+    color: var(--color-accent);
 }
 
 /* Animations */
@@ -1130,7 +1296,7 @@ h1, h2, h3, h4 {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .map-interactive-container {
+    .map-interactive-container, .location-grid {
         grid-template-columns: 1fr;
     }
     .acr-photo-gallery {
@@ -1151,8 +1317,8 @@ h1, h2, h3, h4 {
     .layout-split, .fauna-grid, .acr-content-grid {
         grid-template-columns: 1fr;
     }
-    .hero h1 {
-        font-size: 2.2rem;
+    .hero-logo-card {
+        padding: 1.5rem;
     }
     .nav-links {
         display: none;

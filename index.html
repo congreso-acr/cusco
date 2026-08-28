@@ -16,13 +16,16 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-content">
-            <a href="index.html" class="logo">Conservación Cusco</a>
+            <a href="index.html" class="logo-link">
+        <img src="logo_gore_cusco.png" alt="Gobierno Regional Cusco" class="nav-logo-gore">
+    </a>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre">El Congreso</a></li>
                 <li><a href="acrs.html">Áreas de Conservación</a></li>
                 <li><a href="#programa">Programa</a></li>
                 <li><a href="#materiales">Ponencias</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
             </ul>
             <a href="#registro" class="btn-primary nav-btn">Inscribirse</a>
         </div>
@@ -32,12 +35,19 @@
     <header id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content reveal">
-            <div class="inca-accent"></div>
-            <h1>III Congreso Nacional de<br>Áreas de Conservación Regional</h1>
+            <div class="hero-logo-card">
+                <img src="logo_congreso_acr.png" alt="III Congreso Nacional de Áreas de Conservación Regional" class="hero-logo-main">
+            </div>
             <p class="hero-subtitle">Generando iniciativas para la gestión de nuestro patrimonio natural y gobernanza territorial.</p>
             <div class="event-details">
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 6 al 9 de Septiembre</span>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Cusco, Perú</span>
+                <div class="event-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>6 al 9 de Septiembre</span>
+                </div>
+                <a href="https://maps.app.goo.gl/Q1zDi3GxTG8dbVrRA" target="_blank" rel="noopener noreferrer" class="event-location-link" title="Abrir ubicación en Google Maps">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span><strong>Sede:</strong> Centro de Convenciones de la Municipalidad Provincial del Cusco - Sala Ollantaytambo, Centro Histórico del Cusco - Plaza Regocijo <span class="maps-badge">Ver en Maps ↗</span></span>
+                </a>
             </div>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                 <a href="#programa" class="btn-primary">Ver Programa Oficial</a>
@@ -601,6 +611,45 @@
             </div>
             <div class="materials-notice">
                 <p><em>* Todos los materiales estarán disponibles para su descarga una vez finalizado cada bloque del congreso.</em></p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Sede Oficial y Ubicación Google Maps -->
+    <section id="ubicacion" class="location-section">
+        <div class="container reveal">
+            <div class="section-header center">
+                <div class="inca-accent-small" style="margin: 0 auto 1rem;"></div>
+                <h2>Sede Oficial y Cómo Llegar</h2>
+                <p>Ubicación estratégica en el corazón del Centro Histórico de la ciudad del Cusco.</p>
+            </div>
+            <div class="location-grid">
+                <div class="location-info">
+                    <h3>Centro de Convenciones</h3>
+                    <p class="location-address">
+                        <strong>Sala Ollantaytambo</strong><br>
+                        Municipalidad Provincial del Cusco<br>
+                        Plaza Regocijo (a media cuadra de la Plaza de Armas), Cusco - Perú.
+                    </p>
+                    <ul class="location-details-list">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span>Ingreso y acreditación desde las 08:00 a.m.</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>Fácil acceso peatonal y vehicular en Centro Histórico</span>
+                        </li>
+                    </ul>
+                    <a href="https://maps.app.goo.gl/Q1zDi3GxTG8dbVrRA" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Abrir en Google Maps ↗
+                    </a>
+                </div>
+                <div class="map-embed-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1939.653835546939!2d-71.98278129100801!3d-13.516700625902121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd60cbac2ecd1%3A0xcd55c48d696bb8fd!2sCentro%20De%20Convenciones!5e0!3m2!1ses-419!2spe!4v1787930211890!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
             </div>
         </div>
     </section>
