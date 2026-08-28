@@ -327,39 +327,66 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   SECCIÓN SOBRE EL CONGRESO Y PILARES
+   SECCIÓN SOBRE EL CONGRESO Y PILARES EN 4 COLUMNAS (1 FILA)
    ========================================================================== */
 .about-section {
     background: var(--color-bg);
 }
 
-.feature-card {
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    align-items: stretch;
+}
+
+.pillar-card {
     background: var(--color-bg-alt);
-    padding: 1.8rem;
-    border-radius: 12px;
-    border-left: 5px solid var(--color-primary);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border-top: 1px solid var(--color-gray-200);
-    border-right: 1px solid var(--color-gray-200);
-    border-bottom: 1px solid var(--color-gray-200);
+    padding: 2rem 1.6rem;
+    border-radius: 14px;
+    border: 1px solid var(--color-gray-300);
+    border-top: 5px solid var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+.pillar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(140, 24, 43, 0.08);
 }
-.feature-card h3 {
-    font-size: 1.22rem;
-    margin-bottom: 0.6rem;
+.pillar-card.pillar-day1 { border-top-color: var(--color-trescanones); }
+.pillar-card.pillar-day2 { border-top-color: var(--color-primary); }
+.pillar-card.pillar-day3 { border-top-color: var(--color-accent); }
+.pillar-card.pillar-day4 { border-top-color: var(--color-ausangate); }
+
+.pillar-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+.pillar-day1 .pillar-badge { background: rgba(217, 119, 6, 0.12); color: var(--color-trescanones); }
+.pillar-day2 .pillar-badge { background: rgba(140, 24, 43, 0.12); color: var(--color-primary); }
+.pillar-day3 .pillar-badge { background: rgba(229, 168, 35, 0.18); color: #B45309; }
+.pillar-day4 .pillar-badge { background: rgba(5, 150, 105, 0.12); color: var(--color-ausangate); }
+
+.pillar-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
     color: var(--color-primary);
     line-height: 1.35;
 }
-.feature-card p {
+.pillar-card p {
     color: var(--color-gray-700);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.55;
+    flex-grow: 1;
 }
 
 /* ==========================================================================
@@ -457,7 +484,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   PROGRAMA Y TABS
+   PROGRAMA: FORMATO ÚNICO, LIMPIO Y ALINEADO (SIN FONDOS AMARILLOS)
    ========================================================================== */
 .tabs {
     display: flex;
@@ -501,77 +528,91 @@ h1, h2, h3, h4 {
     display: block;
 }
 
+/* Formato Único y Homogéneo para todos los ítems */
 .schedule-item {
     display: flex;
-    gap: 2rem;
+    align-items: flex-start;
+    gap: 2.5rem;
     padding: 1.4rem 0;
     border-bottom: 1px solid var(--color-gray-200);
+    background: transparent !important; /* Cero fondos amarillos */
+    border-left: none !important;
 }
 .schedule-item:last-child {
     border-bottom: none;
 }
-.schedule-item.highlight {
-    background-color: #FFF8E7;
-    padding: 1.4rem;
-    border-radius: 10px;
-    margin: 0.8rem 0;
-    border-left: 4px solid var(--color-accent);
-    border-bottom: none;
-}
+
 .schedule-item .time {
     font-weight: 800;
     color: var(--color-primary);
-    min-width: 120px;
+    min-width: 140px;
     font-family: var(--font-heading);
     font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    padding-top: 0.15rem;
 }
-.schedule-item.highlight .time {
-    color: var(--color-primary-dark);
+
+.schedule-item .details {
+    flex-grow: 1;
 }
+
 .schedule-item h4 {
     margin-bottom: 0.35rem;
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     color: var(--color-text);
+    line-height: 1.4;
+    font-weight: 700;
 }
+
 .schedule-item p {
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     color: var(--color-gray-700);
-    line-height: 1.5;
+    line-height: 1.55;
+    margin: 0;
 }
 
 /* ==========================================================================
-   TARJETAS DE ALIADOS / INSTITUCIONES
+   SECCIÓN DE AGRADECIMIENTO CON LOGOS OFICIALES EN IMÁGENES
    ========================================================================== */
-.ally-card {
-    background: white;
-    padding: 1.4rem 1.2rem;
-    border-radius: 12px;
-    border: 1px solid var(--color-gray-300);
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+.allies-section {
+    background: var(--color-bg-alt);
+    padding: 5rem 0;
+    border-top: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.official-logos-container {
     display: flex;
     flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo-display-card {
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 18px;
+    border: 1px solid var(--color-gray-300);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.ally-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(140, 24, 43, 0.12);
-    border-color: var(--color-primary);
+.logo-display-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
-.ally-card strong {
-    font-size: 1.05rem;
-    color: var(--color-primary);
-    font-family: var(--font-heading);
-    margin-bottom: 0.25rem;
+
+.official-logo-img {
+    max-width: 100%;
+    height: auto;
     display: block;
-}
-.ally-card small {
-    font-size: 0.8rem;
-    color: var(--color-gray-700);
-    line-height: 1.3;
+    object-fit: contain;
 }
 
 /* ==========================================================================
@@ -1186,6 +1227,12 @@ h1, h2, h3, h4 {
 }
 
 /* Responsive Styles */
+@media (max-width: 1100px) {
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 992px) {
     .map-interactive-container, .location-grid {
         grid-template-columns: 1fr;
@@ -1205,6 +1252,9 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
     .fauna-grid, .acr-content-grid {
         grid-template-columns: 1fr;
     }
