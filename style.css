@@ -326,13 +326,10 @@ h1, h2, h3, h4 {
     box-shadow: 0 4px 15px rgba(229, 168, 35, 0.4);
 }
 
-/* ==========================================================================
-   SECCIÓN SOBRE EL CONGRESO Y PILARES EN 4 COLUMNAS (1 FILA)
-   ========================================================================== */
-.about-section {
-    background: var(--color-bg);
-}
 
+/* ==========================================================================
+   TARJETAS DE ALTO IMPACTO: 4 EJES PRINCIPALES (1 FILA)
+   ========================================================================== */
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -341,52 +338,138 @@ h1, h2, h3, h4 {
     align-items: stretch;
 }
 
-.pillar-card {
-    background: var(--color-bg-alt);
-    padding: 2rem 1.6rem;
-    border-radius: 14px;
+.pillar-impact-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 2.2rem 1.8rem;
     border: 1px solid var(--color-gray-300);
-    border-top: 5px solid var(--color-primary);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: space-between;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
 }
-.pillar-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 28px rgba(140, 24, 43, 0.08);
-}
-.pillar-card.pillar-day1 { border-top-color: var(--color-trescanones); }
-.pillar-card.pillar-day2 { border-top-color: var(--color-primary); }
-.pillar-card.pillar-day3 { border-top-color: var(--color-accent); }
-.pillar-card.pillar-day4 { border-top-color: var(--color-ausangate); }
 
-.pillar-badge {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    width: fit-content;
+.pillar-impact-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--pillar-color, var(--color-primary));
+    transition: height 0.3s ease;
 }
-.pillar-day1 .pillar-badge { background: rgba(217, 119, 6, 0.12); color: var(--color-trescanones); }
-.pillar-day2 .pillar-badge { background: rgba(140, 24, 43, 0.12); color: var(--color-primary); }
-.pillar-day3 .pillar-badge { background: rgba(229, 168, 35, 0.18); color: #B45309; }
-.pillar-day4 .pillar-badge { background: rgba(5, 150, 105, 0.12); color: var(--color-ausangate); }
 
-.pillar-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 0.8rem;
+.pillar-impact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--pillar-color, var(--color-primary));
+}
+
+.pillar-impact-card:hover::before {
+    height: 9px;
+}
+
+.pillar-card-1 { --pillar-color: #D97706; }
+.pillar-card-2 { --pillar-color: #8C182B; }
+.pillar-card-3 { --pillar-color: #0D9488; }
+.pillar-card-4 { --pillar-color: #059669; }
+
+.pillar-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.4rem;
+}
+
+.pillar-day-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.pillar-card-1 .pillar-day-tag { background: rgba(217, 119, 6, 0.12); color: #B45309; }
+.pillar-card-2 .pillar-day-tag { background: rgba(140, 24, 43, 0.12); color: #8C182B; }
+.pillar-card-3 .pillar-day-tag { background: rgba(13, 148, 136, 0.12); color: #0F766E; }
+.pillar-card-4 .pillar-day-tag { background: rgba(5, 150, 105, 0.12); color: #047857; }
+
+.pillar-num-watermark {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--color-gray-300);
+    line-height: 1;
+    opacity: 0.7;
+}
+
+.pillar-impact-card h3 {
+    font-size: 1.18rem;
+    font-weight: 800;
     color: var(--color-primary);
     line-height: 1.35;
+    margin-bottom: 1.2rem;
+    min-height: 52px;
 }
-.pillar-card p {
-    color: var(--color-gray-700);
-    font-size: 0.92rem;
-    line-height: 1.55;
+
+.pillar-card-1 h3 { color: #B45309; }
+.pillar-card-2 h3 { color: #8C182B; }
+.pillar-card-3 h3 { color: #0F766E; }
+.pillar-card-4 h3 { color: #047857; }
+
+.pillar-highlights-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
     flex-grow: 1;
+}
+
+.pillar-highlights-list li {
+    font-size: 0.9rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.pillar-highlights-list li::before {
+    content: "✓";
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: var(--pillar-color, var(--color-primary));
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.pillar-card-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.pillar-link-btn {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--pillar-color, var(--color-primary));
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform 0.2s ease, gap 0.2s ease;
+}
+
+.pillar-link-btn:hover {
+    gap: 0.65rem;
+    text-decoration: underline;
 }
 
 /* ==========================================================================
