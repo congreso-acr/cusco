@@ -157,3 +157,21 @@ function initInteractiveFeatures() {
 document.addEventListener('DOMContentLoaded', initInteractiveFeatures);
 initInteractiveFeatures();
 initMobileNav();
+
+// ==========================================================================
+// TOGGLE EXPAND/COLLAPSE JURADO BIO
+// ==========================================================================
+function initJuradoBioToggles() {
+    const toggleBtns = document.querySelectorAll('.btn-ver-mas');
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.jurado-card');
+            if (card) {
+                const isExpanded = card.classList.toggle('expanded');
+                btn.innerHTML = isExpanded ? 'Ver menos ▴' : 'Ver más... ▾';
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initJuradoBioToggles);
