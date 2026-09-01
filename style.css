@@ -1729,3 +1729,323 @@ h1, h2, h3, h4 {
     display: block;
     object-fit: contain;
 }
+
+/* ==========================================================================
+   CONCURSO DE FOTOGRAFÍA STYLES
+   ========================================================================== */
+.subpage-hero-concurso {
+    background: linear-gradient(135deg, rgba(140, 24, 43, 0.94) 0%, rgba(217, 119, 6, 0.88) 100%), url('choquequirao_atardecer.jpg') center/cover no-repeat;
+}
+
+/* Sección Jurado / Trayectoria */
+.curator-section {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.curator-card {
+    background: var(--color-bg-alt);
+    border-radius: 16px;
+    border: 1px solid var(--color-gray-300);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.curator-photo-box {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.curator-avatar-placeholder {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: rgba(140, 24, 43, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    border: 2px dashed var(--color-primary);
+}
+
+.curator-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.curator-info h3 {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+}
+
+.curator-role-tag {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    background: rgba(217, 119, 6, 0.12);
+    color: #B45309;
+    border-radius: 20px;
+    font-size: 0.84rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-heading);
+}
+
+.curator-bio {
+    color: var(--color-gray-700);
+    line-height: 1.65;
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+}
+
+.curator-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.curator-highlights li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.92rem;
+    color: var(--color-text);
+}
+
+.curator-highlights li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 900;
+}
+
+/* Sección Bases del Concurso & Requisitos */
+.contest-bases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+}
+
+.basis-box {
+    background: #FFFFFF;
+    padding: 2rem 1.8rem;
+    border-radius: 14px;
+    border: 1px solid var(--color-gray-300);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.basis-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--basis-color, var(--color-primary));
+}
+
+.basis-box h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.basis-box p, .basis-box li {
+    font-size: 0.92rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+}
+
+.basis-box ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.basis-box ul li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.basis-box ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Espacios Finalistas (5 Categorías) */
+.finalists-section {
+    background: var(--color-bg-alt);
+    padding: 5rem 0;
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.finalists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.finalist-card-placeholder {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px dashed var(--color-gray-300);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.finalist-card-placeholder:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 16px 35px rgba(140, 24, 43, 0.1);
+}
+
+.finalist-img-container {
+    height: 240px;
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.finalist-badge-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0.35rem 0.85rem;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.finalist-badge-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 0.35rem 0.85rem;
+    background: var(--color-accent);
+    color: #1E293B;
+    border-radius: 20px;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.finalist-icon-placeholder {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-700);
+    margin-bottom: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.finalist-info-body {
+    padding: 1.8rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.finalist-title {
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.finalist-author {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.finalist-acr {
+    font-size: 0.86rem;
+    color: #B45309;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.finalist-desc {
+    font-size: 0.88rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
+    flex-grow: 1;
+    font-style: italic;
+    background: var(--color-bg-alt);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .curator-card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    .curator-photo-box {
+        height: 240px;
+    }
+    .finalists-grid {
+        grid-template-columns: 1fr;
+    }
+}
