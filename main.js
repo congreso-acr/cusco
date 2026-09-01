@@ -175,3 +175,29 @@ function initJuradoBioToggles() {
 }
 
 document.addEventListener('DOMContentLoaded', initJuradoBioToggles);
+
+// ==========================================================================
+// CATEGORY TABS (CONCURSO FOTOGRAFIA FINALISTAS)
+// ==========================================================================
+function initCategoryTabs() {
+    const catBtns = document.querySelectorAll('.cat-tab-btn');
+    const catPanes = document.querySelectorAll('.category-finalists-pane');
+
+    if (catBtns.length > 0) {
+        catBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                catBtns.forEach(b => b.classList.remove('active'));
+                catPanes.forEach(p => p.classList.remove('active'));
+
+                btn.classList.add('active');
+                const targetCat = btn.getAttribute('data-cat');
+                const pane = document.getElementById(targetCat);
+                if (pane) {
+                    pane.classList.add('active');
+                }
+            });
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initCategoryTabs);
