@@ -201,3 +201,56 @@ function initCategoryTabs() {
 }
 
 document.addEventListener('DOMContentLoaded', initCategoryTabs);
+
+// ==========================================================================
+// PHOTO LIGHTBOX MODAL FUNCTIONALITY
+// ==========================================================================
+function initPhotoLightbox() {
+    const lightbox = document.getElementById('photo-lightbox');
+    if (!lightbox) return;
+
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxMeta = document.getElementById('lightbox-meta');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    // Click handler for all finalist photo boxes
+    document.querySelectorAll('.finalist-img-clickable').forEach(card => {
+        card.addEventListener('click', () => {
+            const img = card.querySelector('img');
+            const title = card.getAttribute('data-title') || 'Fotografía Finalista';
+            const author = card.getAttribute('data-author') || 'Autor';
+            const acr = card.getAttribute('data-acr') || 'Área de Conservación Regional';
+
+            if (img && img.src) {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = title;
+                lightboxTitle.textContent = title;
+                lightboxMeta.textContent = `Autor: ${author} · ACR: ${acr}`;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-content-wrapper')) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initPhotoLightbox);
