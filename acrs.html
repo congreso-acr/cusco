@@ -18,17 +18,27 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo-link">
-        <img src="logo_gore_cusco.png" alt="Gobierno Regional Cusco" class="nav-logo-gore">
-    </a>
+                <img src="logo_gore_cusco.png" alt="Gobierno Regional Cusco" class="nav-logo-gore">
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#sobre">El Congreso</a></li>
                 <li><a href="acrs.html" class="active">Áreas de Conservación</a></li>
-                <li><a href="programa.html">Programa Oficial</a></li>
+                <li><a href="programa.html">Programa</a></li>
+                <li><a href="concurso-fotografia.html">Concurso Fotografía</a></li>
                 <li><a href="index.html#instituciones">Aliados</a></li>
                 <li><a href="index.html#ubicacion">Ubicación</a></li>
+                <li class="mobile-only-btn"><a href="programa.html" class="btn-primary">Ver Programa</a></li>
             </ul>
-            <a href="programa.html" class="btn-primary nav-btn">Ver Programa</a>
+
+            <a href="programa.html" class="btn-primary nav-btn desktop-only">Ver Programa</a>
         </div>
     </nav>
 
@@ -39,14 +49,12 @@
             <div class="inca-accent"></div>
             <h1>Áreas de Conservación Regional de Cusco</h1>
             <p class="hero-subtitle">Guardianas de nuestras cabeceras de cuenca, diversidad biológica y herencia cultural andino-amazónica.</p>
-            <div class="quick-nav-pills">
-                <a href="#mapa-seccion" class="pill-btn">🗺️ Mapa Interactivo</a>
-                <a href="#acr-choquequirao" class="pill-btn">Choquequirao</a>
-                <a href="#acr-tres-canones" class="pill-btn">Tres Cañones</a>
-                <a href="#acr-ausangate" class="pill-btn">Ausangate</a>
-                <a href="#acr-chuyapi-urusayhua" class="pill-btn">Chuyapi Urusayhua</a>
-                <a href="#acr-qeros-kosnipata" class="pill-btn">Q'eros–Kosñipata</a>
-                <a href="#panel-especies" class="pill-btn">🐾 Especies Emblemáticas</a>
+            <div class="hero-btn-group">
+                <a href="#choquequirao" class="btn-primary">Explorar ACR Choquequirao</a>
+                <a href="#tres-canones" class="btn-secondary">ACR Tres Cañones</a>
+                <a href="#ausangate" class="btn-secondary">ACR Ausangate</a>
+                <a href="#chuyapi" class="btn-secondary">ACR Chuyapi Ursayhua</a>
+                <a href="index.html" class="btn-secondary">← Inicio</a>
             </div>
         </div>
     </header>

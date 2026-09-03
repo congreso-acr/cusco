@@ -1,4 +1,37 @@
 // ==========================================================================
+// RESPONSIVE MOBILE NAVIGATION TOGGLE
+// ==========================================================================
+function initMobileNav() {
+    const toggleBtn = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleBtn.classList.toggle('open');
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Close menu when tapping a link
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                toggleBtn.classList.remove('open');
+                navLinks.classList.remove('mobile-open');
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+                toggleBtn.classList.remove('open');
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+    }
+}
+
+// ==========================================================================
 // SCROLL REVEAL ANIMATION
 // ==========================================================================
 function reveal() {
@@ -6,7 +39,7 @@ function reveal() {
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 60;
+        const elementVisible = 50;
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
@@ -15,8 +48,10 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
-window.addEventListener("DOMContentLoaded", reveal);
-reveal();
+window.addEventListener("DOMContentLoaded", () => {
+    initMobileNav();
+    reveal();
+});
 
 // ==========================================================================
 // TABS LOGIC (PROGRAMA)
@@ -45,12 +80,10 @@ if (tabBtns.length > 0) {
 // ==========================================================================
 function scrollToAcrSection(acrId) {
     if (!acrId) return;
-    const targetElement = document.getElementById(`acr-${acrId}`);
+    const targetElement = document.getElementById('acr-' + acrId);
     if (targetElement) {
-        // Smooth scroll to target ACR sheet
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        // Add highlight pulse
         targetElement.classList.add('highlight-pulse');
         setTimeout(() => {
             targetElement.classList.remove('highlight-pulse');
@@ -65,34 +98,31 @@ function initInteractiveFeatures() {
     const legendItems = document.querySelectorAll('.legend-item');
     const interactiveElements = document.querySelectorAll('.map-acr-polygon, .map-acr-badge');
 
-    // 1. Polygons & Badge Buttons on Map
     interactiveElements.forEach(el => {
         const acrId = el.getAttribute('data-acr');
         const acrName = el.getAttribute('data-name');
         const acrArea = el.getAttribute('data-area');
 
         el.addEventListener('mouseenter', () => {
-            // Highlight both the polygon AND badge for this ACR
-            const related = document.querySelectorAll(`[data-acr="${acrId}"]`);
+            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
             related.forEach(r => r.classList.add('active-highlight'));
 
             if (tooltip && tooltipTitle) {
                 tooltipTitle.textContent = acrName || 'Área de Conservación';
                 if (tooltipArea) {
-                    tooltipArea.textContent = acrArea ? `Superficie: ${acrArea}` : '';
+                    tooltipArea.textContent = acrArea ? 'Superficie: ' + acrArea : '';
                 }
                 tooltip.style.opacity = '1';
                 tooltip.style.transform = 'translateY(0)';
             }
 
-            // Sync sidebar legend
             legendItems.forEach(item => {
                 if (item.getAttribute('data-acr') === acrId) item.classList.add('active');
             });
         });
 
         el.addEventListener('mouseleave', () => {
-            const related = document.querySelectorAll(`[data-acr="${acrId}"]`);
+            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
             related.forEach(r => r.classList.remove('active-highlight'));
 
             legendItems.forEach(item => item.classList.remove('active'));
@@ -104,17 +134,16 @@ function initInteractiveFeatures() {
         });
     });
 
-    // 2. Sidebar Legend Items
     legendItems.forEach(item => {
         const acrId = item.getAttribute('data-acr');
 
         item.addEventListener('mouseenter', () => {
-            const related = document.querySelectorAll(`[data-acr="${acrId}"]`);
+            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
             related.forEach(r => r.classList.add('active-highlight'));
         });
 
         item.addEventListener('mouseleave', () => {
-            const related = document.querySelectorAll(`[data-acr="${acrId}"]`);
+            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
             related.forEach(r => r.classList.remove('active-highlight'));
         });
 
@@ -127,3 +156,48 @@ function initInteractiveFeatures() {
 
 document.addEventListener('DOMContentLoaded', initInteractiveFeatures);
 initInteractiveFeatures();
+initMobileNav();
+
+// ==========================================================================
+// TOGGLE EXPAND/COLLAPSE JURADO BIO
+// ==========================================================================
+function initJuradoBioToggles() {
+    const toggleBtns = document.querySelectorAll('.btn-ver-mas');
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.jurado-card');
+            if (card) {
+                const isExpanded = card.classList.toggle('expanded');
+                btn.innerHTML = isExpanded ? 'Ver menos ▴' : 'Ver más... ▾';
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initJuradoBioToggles);
+
+// ==========================================================================
+// CATEGORY TABS (CONCURSO FOTOGRAFIA FINALISTAS)
+// ==========================================================================
+function initCategoryTabs() {
+    const catBtns = document.querySelectorAll('.cat-tab-btn');
+    const catPanes = document.querySelectorAll('.category-finalists-pane');
+
+    if (catBtns.length > 0) {
+        catBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                catBtns.forEach(b => b.classList.remove('active'));
+                catPanes.forEach(p => p.classList.remove('active'));
+
+                btn.classList.add('active');
+                const targetCat = btn.getAttribute('data-cat');
+                const pane = document.getElementById(targetCat);
+                if (pane) {
+                    pane.classList.add('active');
+                }
+            });
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initCategoryTabs);

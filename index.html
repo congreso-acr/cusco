@@ -3,282 +3,478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>III Congreso Nacional de Áreas de Conservación Regional · Cusco 2026</title>
-    <!-- Ícono para la pestaña del navegador -->
-    <link rel="icon" type="image/png" href="logo_gore_cusco.png">
-    <meta name="description" content="III Congreso Nacional de Áreas de Conservación Regional en Cusco (06 al 09 de setiembre). Articulando iniciativas para la gestión de nuestro patrimonio natural y gobernanza territorial.">
+    <title>III Congreso Nacional de Áreas de Conservación Regional - Cusco 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar Institucional -->
+
+    <!-- NAVBAR INSTITUCIONAL CON MENÚ RESPONSIVO MÓVIL -->
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo-link">
                 <img src="logo_gore_cusco.png" alt="Gobierno Regional Cusco" class="nav-logo-gore">
             </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre">El Congreso</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="index.html#sobre">El Congreso</a></li>
                 <li><a href="acrs.html">Áreas de Conservación</a></li>
-                <li><a href="programa.html">Programa Oficial</a></li>
-                <li><a href="#instituciones">Aliados</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="programa.html">Programa</a></li>
+                <li><a href="concurso-fotografia.html">Concurso Fotografía</a></li>
+                <li><a href="index.html#instituciones">Aliados</a></li>
+                <li><a href="index.html#ubicacion">Ubicación</a></li>
+                <li class="mobile-only-btn"><a href="programa.html" class="btn-primary">Ver Programa</a></li>
             </ul>
-            <a href="programa.html" class="btn-primary nav-btn">Ver Programa</a>
+
+            <a href="programa.html" class="btn-primary nav-btn desktop-only">Ver Programa</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="inicio" class="hero">
+    <!-- HERO PRINCIPAL -->
+    <header class="hero" id="inicio">
         <div class="hero-overlay"></div>
         <div class="hero-content reveal">
-            <div class="hero-logo-card">
-                <img src="logo_congreso_acr.png" alt="III Congreso Nacional de Áreas de Conservación Regional" class="hero-logo-main">
-            </div>
-            <p class="hero-subtitle">Articulando iniciativas para la gestión de nuestro patrimonio natural y gobernanza territorial</p>
             
+            <div class="hero-banner-container">
+                <img src="banner_oficial_congreso_acr.jpg" alt="III Congreso Nacional de Áreas de Conservación Regional Cusco - 06 al 09 Setiembre" class="hero-banner-img">
+            </div>
+
+            <div class="inca-accent"></div>
+
+            <p class="hero-subtitle">
+                "Articulando iniciativas para la gestión de nuestro patrimonio natural y gobernanza territorial"
+            </p>
+
             <div class="event-details">
                 <div class="event-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                    <span>6 al 9 de Septiembre</span>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 4h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                    <span>06 al 09 de Setiembre</span>
                 </div>
-                <a href="https://maps.app.goo.gl/Q1zDi3GxTG8dbVrRA" target="_blank" rel="noopener noreferrer" class="event-location-link" title="Abrir ubicación en Google Maps">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span><strong>Sede:</strong> Centro de Convenciones de la Municipalidad Provincial del Cusco - Sala Ollantaytambo, Centro Histórico del Cusco - Plaza Regocijo <span class="maps-badge">Ver en Maps ↗</span></span>
+                
+                <a href="#ubicacion" class="event-location-link">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>Sala Ollantaytambo (Municipalidad del Cusco - Plaza Regocijo)</span>
+                    <span class="maps-badge">Ver Mapa</span>
                 </a>
             </div>
 
-            <div style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
-                <a href="programa.html" class="btn-primary" style="padding: 0.85rem 1.8rem; font-size: 1rem;">📅 Ver Programa Oficial Detallado</a>
-                <a href="acrs.html" class="pill-btn" style="padding: 0.85rem 1.6rem; font-size: 1rem;">🗺️ Explorar las 5 ACRs de Cusco</a>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="programa.html" class="btn-primary" style="background-color: var(--color-accent); color: #1E293B;">Ver Programa Completo</a>
+                <a href="acrs.html" class="btn-primary" style="background-color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);">Explorar ACRs de Cusco</a>
             </div>
         </div>
     </header>
 
-    <!-- Sobre el congreso y Ejes en 1 Sola Fila (4 Columnas) -->
-    <section id="sobre" class="about-section">
-        <div class="container">
-            <div class="section-header center reveal">
-                <div class="inca-accent-small" style="margin: 0 auto 1rem;"></div>
-                <h2>El Congreso: 4 Ejes Principales</h2>
-                <p>Estructura oficial del encuentro nacional distribuida en 4 jornadas estratégicas de trabajo.</p>
+    <!-- SECCIÓN: EL CONGRESO (4 EJES DE IMPACTO EN 2 FILAS DE 2 COLUMNAS) -->
+    <section class="container about-section" id="sobre">
+        <div class="section-header center reveal">
+            <h2>El Encuentro Nacional de Conservación</h2>
+            <div class="inca-accent" style="margin: 0.8rem auto 1.5rem auto;"></div>
+            <p>
+                El <strong>III Congreso Nacional de Áreas de Conservación Regional</strong> consolida a Cusco como la capital de la biodiversidad, reuniendo a tomadores de decisión, comunidades locales, pueblos indígenas, científicos y cooperantes internacionales en torno a 4 ejes temáticos fundamentales:
+            </p>
+        </div>
+
+        <div class="pillars-grid reveal">
+            <!-- Eje 1 -->
+            <div class="pillar-impact-card pillar-card-1">
+                <div>
+                    <div class="pillar-card-header">
+                        <span class="pillar-day-tag">Día 1 · 06 Set</span>
+                        <span class="pillar-num-watermark">01</span>
+                    </div>
+                    <h3>Gobernanza Territorial, Participación y Sostenibilidad Financiera</h3>
+                    <ul class="pillar-highlights-list">
+                        <li>Modelos innovadores de co-gestión con comunidades campesinas y pueblos originarios.</li>
+                        <li>Mecanismos de Retribución por Servicios Ecosistémicos (MERESE).</li>
+                        <li>Fondos de agua y financiamiento climático internacional.</li>
+                    </ul>
+                </div>
+                <div class="pillar-card-footer">
+                    <a href="programa.html#dia1" class="pillar-link-btn">Ver Sesiones del Eje 1 →</a>
+                </div>
             </div>
 
-            
-            <!-- 4 Ejes de Alto Impacto en 1 Sola Fila -->
-            <div class="pillars-grid">
-                
-                <!-- Tarjeta Eje 1 (Día 1) -->
-                <article class="pillar-impact-card pillar-card-1 reveal">
-                    <div>
-                        <div class="pillar-card-header">
-                            <span class="pillar-day-tag">06 SET · Día 1</span>
-                            <span class="pillar-num-watermark">01</span>
-                        </div>
-                        <h3>Experiencia Territorial: Visita al ACR Tres Cañones</h3>
-                        <ul class="pillar-highlights-list">
-                            <li>Vivencia de campo en Espinar en los sitios arqueológicos <strong>Maukallaqta</strong> y <strong>Taqrachullo</strong>.</li>
-                            <li>Recepción en la explanada de Tres Cañones y danzas de la <strong>Nación K'ana</strong>.</li>
-                            <li>Feria artesanal y exposición de bioemprendimientos sostenibles.</li>
-                        </ul>
-                    </div>
-                    <div class="pillar-card-footer">
-                        <a href="programa.html" class="pillar-link-btn">Ver agenda del Día 1 →</a>
-                    </div>
-                </article>
-
-                <!-- Tarjeta Eje 2 (Día 2) -->
-                <article class="pillar-impact-card pillar-card-2 reveal">
-                    <div>
-                        <div class="pillar-card-header">
-                            <span class="pillar-day-tag">07 SET · Día 2</span>
-                            <span class="pillar-num-watermark">02</span>
-                        </div>
-                        <h3>Fortalecimiento Institucional y Gestión Efectiva</h3>
-                        <ul class="pillar-highlights-list">
-                            <li><strong>Inauguración Oficial</strong> con el GORE Cusco, MINAM, SERNANP y la ANGR.</li>
-                            <li>Balance y avances tras la <strong>Declaración de Cajamarca</strong>.</li>
-                            <li>Monitoreo satelital y control frente a <strong>minería y tala ilegal</strong>.</li>
-                        </ul>
-                    </div>
-                    <div class="pillar-card-footer">
-                        <a href="programa.html" class="pillar-link-btn">Ver agenda del Día 2 →</a>
-                    </div>
-                </article>
-
-                <!-- Tarjeta Eje 3 (Día 3) -->
-                <article class="pillar-impact-card pillar-card-3 reveal">
-                    <div>
-                        <div class="pillar-card-header">
-                            <span class="pillar-day-tag">08 SET · Día 3</span>
-                            <span class="pillar-num-watermark">03</span>
-                        </div>
-                        <h3>Gobernanza Territorial, Finanzas y Declaración</h3>
-                        <ul class="pillar-highlights-list">
-                            <li>Conectividad de mosaicos, <strong>mecanismos MERESE</strong> y bonos de biodiversidad.</li>
-                            <li>Foro con la cooperación internacional (<strong>KfW, UNEP, AAF, CI</strong>).</li>
-                            <li>Mesas de trabajo para la histórica <strong>"Declaración del Cusco"</strong>.</li>
-                        </ul>
-                    </div>
-                    <div class="pillar-card-footer">
-                        <a href="programa.html" class="pillar-link-btn">Ver agenda del Día 3 →</a>
-                    </div>
-                </article>
-
-                <!-- Tarjeta Eje 4 (Día 4) -->
-                <article class="pillar-impact-card pillar-card-4 reveal">
-                    <div>
-                        <div class="pillar-card-header">
-                            <span class="pillar-day-tag">09 SET · Día 4</span>
-                            <span class="pillar-num-watermark">04</span>
-                        </div>
-                        <h3>Conservación Inclusiva, Ciencia y Sede 2027</h3>
-                        <ul class="pillar-highlights-list">
-                            <li>Liderazgo de <strong>mujeres y comunidades</strong> en la gestión de las ACR.</li>
-                            <li>Ciencia y monitoreo del <strong>Oso Andino (Ukumari)</strong>.</li>
-                            <li><strong>Elección democrática de la Sede</strong> del IV Congreso Nacional.</li>
-                        </ul>
-                    </div>
-                    <div class="pillar-card-footer">
-                        <a href="programa.html" class="pillar-link-btn">Ver agenda del Día 4 →</a>
-                    </div>
-                </article>
-
-            </div><!-- Banner Informativo con Botón al Programa -->
-            <div class="program-callout-card reveal">
+            <!-- Eje 2 -->
+            <div class="pillar-impact-card pillar-card-2">
                 <div>
-                    <h3 style="color: var(--color-primary); font-size: 1.35rem; margin-bottom: 0.3rem;">Consulta el Cronograma Detallado por Horarios y Ponentes</h3>
-                    <p style="color: var(--color-gray-700); margin: 0; font-size: 0.95rem;">Revisa las conferencias magistrales, mesas redondas y paneles de cada una de las 4 jornadas.</p>
+                    <div class="pillar-card-header">
+                        <span class="pillar-day-tag">Día 2 · 07 Set</span>
+                        <span class="pillar-num-watermark">02</span>
+                    </div>
+                    <h3>Patrimonio Natural, Biodiversidad y Cambio Climático</h3>
+                    <ul class="pillar-highlights-list">
+                        <li>Monitoreo biológico y protección de especies amenazadas (oso de anteojos, taruca).</li>
+                        <li>Estrategias de adaptación y resiliencia ante el retroceso glaciar andino.</li>
+                        <li>Conservación de cabeceras de cuenca y bofedales de alta montaña.</li>
+                    </ul>
                 </div>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="programa.html" class="btn-primary">Ver Programa Completo →</a>
-                    <a href="programa_oficial_congreso_acr.pdf" download class="pill-btn" style="background: white; color: var(--color-primary); border-color: var(--color-primary); font-weight: 700;">📥 Descargar PDF (5.6 MB)</a>
+                <div class="pillar-card-footer">
+                    <a href="programa.html#dia2" class="pillar-link-btn">Ver Sesiones del Eje 2 →</a>
+                </div>
+            </div>
+
+            <!-- Eje 3 -->
+            <div class="pillar-impact-card pillar-card-3">
+                <div>
+                    <div class="pillar-card-header">
+                        <span class="pillar-day-tag">Día 3 · 08 Set</span>
+                        <span class="pillar-num-watermark">03</span>
+                    </div>
+                    <h3>Bioeconomía, Turismo Sostenible y Negocios Verdes</h3>
+                    <ul class="pillar-highlights-list">
+                        <li>Emprendimientos comunitarios sostenibles y bionegocios certificados.</li>
+                        <li>Turismo de naturaleza responsable de bajo impacto.</li>
+                        <li>Cadenas de valor de productos nativos y agroforestería sostenible.</li>
+                    </ul>
+                </div>
+                <div class="pillar-card-footer">
+                    <a href="programa.html#dia3" class="pillar-link-btn">Ver Sesiones del Eje 3 →</a>
+                </div>
+            </div>
+
+            <!-- Eje 4 -->
+            <div class="pillar-impact-card pillar-card-4">
+                <div>
+                    <div class="pillar-card-header">
+                        <span class="pillar-day-tag">Día 4 · 09 Set</span>
+                        <span class="pillar-num-watermark">04</span>
+                    </div>
+                    <h3>Marco Legal, Institucionalidad y Gestión Efectiva</h3>
+                    <ul class="pillar-highlights-list">
+                        <li>Fortalecimiento del Sistema Nacional de Áreas Protegidas (SINANPE).</li>
+                        <li>Fiscalización ambiental y control y vigilancia comunitaria.</li>
+                        <li>Declaración Oficial de Cusco y acuerdos de la Red de ACRs.</li>
+                    </ul>
+                </div>
+                <div class="pillar-card-footer">
+                    <a href="programa.html#dia4" class="pillar-link-btn">Ver Sesiones del Eje 4 →</a>
                 </div>
             </div>
         </div>
+
+        <!-- Tarjeta de Llamado al Programa Oficial -->
+        <div class="program-callout-card reveal">
+            <div>
+                <h3>Agenda Oficial de Conferencias y Paneles Magistrales</h3>
+                <p>Consulta el cronograma detallado de ponencias magistrales, mesas de trabajo y plenarias.</p>
+            </div>
+            <a href="programa.html" class="btn-primary" style="background-color: var(--color-accent); color: #1E293B;">Ver Programa Detallado</a>
+        </div>
     </section>
 
-    <!-- Fauna y Áreas de Conservación en Portada -->
-    <section id="fauna" class="fauna-section">
+    <!-- SECCIÓN: BIODIVERSIDAD Y FAUNA REPRESENTATIVA -->
+    <section class="fauna-section" id="biodiversidad">
         <div class="inca-pattern-bg"></div>
-        <div class="container reveal">
-            <div class="section-header center">
-                <h2>Biodiversidad y Áreas de Conservación de Cusco</h2>
-                <p>Protegiendo a nuestros guardianes andinos y amazónicos en las 5 ACRs del departamento.</p>
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Patrimonio Natural Vivo de Cusco</h2>
+                <div class="inca-accent"></div>
+                <p>Las 5 Áreas de Conservación Regional albergan especies emblemáticas de la fauna silvestre altoandina y amazónica del Perú.</p>
             </div>
-            <div class="fauna-grid">
+
+            <div class="fauna-grid reveal">
                 <div class="fauna-card">
                     <div class="img-wrapper">
-                        <img src="oso_anteojos.jpg" alt="Oso de Anteojos">
+                        <img src="oso_anteojos.jpg" alt="Oso de Anteojos (Ukuku)">
                     </div>
-                    <h3>Oso de Anteojos (Ukumari)</h3>
-                    <p>El único oso de Sudamérica, especie paraguas vital para la salud de los bosques montanos de Choquequirao, Chuyapi Urusayhua y Q'eros.</p>
+                    <h3>Oso de Anteojos (Tremarctos ornatus)</h3>
+                    <p>Conocido como <em>Ukumari</em> o <em>Ukuku</em> en quechua. Especie paraguas fundamental para el equilibrio de los bosques de neblina en el ACR Choquequirao y ACR Chuyapi Ursayacuy.</p>
                 </div>
+
                 <div class="fauna-card list-card">
-                    <h3>Las 5 ACRs de la Región Cusco:</h3>
+                    <h3>Especies Emblemáticas en las ACRs</h3>
                     <ul class="species-list">
-                        <li><strong>ACR Choquequirao:</strong> 103,814 ha · Arqueología, nevados y cañones profundos.</li>
-                        <li><strong>ACR Tres Cañones:</strong> 39,485 ha · Geodiversidad, bofedales y cultura K'ana.</li>
-                        <li><strong>ACR Ausangate:</strong> 66,514 ha · Mayor reservorio hídrico y glaciares sagrados.</li>
-                        <li><strong>ACR Chuyapi Urusayhua:</strong> 80,190 ha · Agua para Quillabamba y yungas.</li>
-                        <li><strong>ACR Q'eros–Kosñipata:</strong> 55,320 ha · Conectividad Manu-Amarakaeri.</li>
+                        <li><strong>Taruca (Hippocamelus antisensis):</strong> Ciervo andino protegido en el ACR Tres Cañones y ACR Ausangate.</li>
+                        <li><strong>Cóndor Andino (Vultur gryphus):</strong> El rey de las alturas de los cañones del río Apurímac.</li>
+                        <li><strong>Gato Andino (Leopardus jacobita):</strong> Uno de los felinos más amenazados del continente.</li>
+                        <li><strong>Gallito de las Rocas (Rupicola peruvianus):</strong> Ave nacional en los valles de Q'eros-Kosñipata.</li>
                     </ul>
+                    
                     <div class="fauna-cta-box">
-                        <a href="acrs.html" class="btn-primary" style="display: block; text-align: center; background-color: var(--color-accent); color: #1E293B; font-weight: 700;">Explorar Mapa Interactivo y Fichas →</a>
+                        <a href="acrs.html#especies" class="btn-primary" style="background-color: var(--color-accent); color: #1E293B; width: 100%; text-align: center;">Ver Catálogo Completo de Fauna y Flora</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================================================
-         SECCIÓN DE AGRADECIMIENTO CON LOGOS OFICIALES EN EL ORDEN DEL PDF
-         ========================================================================== -->
-    <section id="instituciones" class="allies-section">
+    <!-- SECCIÓN: AGRADECIMIENTOS Y ALIADOS ESTRATÉGICOS (24 INSTITUCIONES) -->
+    <section class="allies-section" id="instituciones">
         <div class="container">
             <div class="section-header center reveal">
-                <div class="inca-accent-small" style="margin: 0 auto 1rem;"></div>
-                <h2>Agradecimiento a las Instituciones Aliadas</h2>
-                <p>Agradecemos a las entidades gubernamentales, organismos de cooperación internacional y organizaciones de la sociedad civil que hacen posible este III Congreso Nacional.</p>
+                <h2>Alianzas y Agradecimientos</h2>
+                <div class="inca-accent" style="margin: 0.8rem auto 1.5rem auto;"></div>
+                <p>
+                    Agradecemos profundamente el compromiso, financiamiento y cooperación técnica de las instituciones organizadoras, cooperantes y aliados estratégicos que hacen posible este evento nacional.
+                </p>
             </div>
 
-            <div class="official-logos-container reveal">
-                
-                <!-- 1. Organizadores y Con el Apoyo de (Portada) -->
-                <div class="logo-display-card">
-                    <img src="logos_organizadores.png" alt="Organizado por: Gobierno Regional del Cusco, ANGR | Con el apoyo de: Red de Áreas de Conservación Regional" class="official-logo-img" style="max-width: 750px;">
+            <!-- 1. ORGANIZADO POR -->
+            <div class="allies-group-header reveal">
+                <h3>Organizado Por</h3>
+            </div>
+            <div class="organizers-grid reveal">
+                <div class="organizer-card">
+                    <img src="logo_organizador_gore_cusco.png" alt="Gobierno Regional del Cusco">
+                    <strong>Gobierno Regional del Cusco</strong>
+                </div>
+                <div class="organizer-card">
+                    <img src="logo_organizador_angr.png" alt="Asamblea Nacional de Gobiernos Regionales">
+                    <strong>Asamblea Nacional de Gobiernos Regionales (ANGR)</strong>
+                </div>
+            </div>
+
+            <!-- 2. CON EL APOYO DE -->
+            <div class="allies-group-header reveal">
+                <h3>Con el Apoyo De</h3>
+            </div>
+            <div class="organizers-grid reveal" style="max-width: 400px; margin-bottom: 3.5rem;">
+                <div class="organizer-card">
+                    <img src="logo_apoyo_red_acr.png" alt="Red de Áreas de Conservación Regional">
+                    <strong>Red de Áreas de Conservación Regional</strong>
+                </div>
+            </div>
+
+            <!-- 3. INSTITUCIONES ALIADAS (1 AL 24) -->
+            <div class="allies-group-header reveal">
+                <h3>Instituciones Aliadas y Cooperación</h3>
+            </div>
+            <div class="allies-responsive-grid reveal">
+                <!-- 1. Andes Amazon Fund -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_01_andes_amazon_fund.png" alt="Andes Amazon Fund">
+                    <span>Andes Amazon Fund</span>
                 </div>
 
-                <!-- 2. Instituciones Aliadas - Bloque 1 -->
-                <div class="logo-display-card">
-                    <img src="logos_aliados_1.png" alt="Instituciones Aliadas: Andes Amazon Fund, Red de ACR, Naturaleza y Cultura, SPDA 40 años, Re:wild, ACCA, Yunkawasi, San Diego Zoo, Instituto del Bien Común, Instituto de Montaña, Profonanpe, WWF" class="official-logo-img" style="max-width: 980px;">
+                <!-- 2. ACCA -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_02_acca.png" alt="Asociación para la Conservación de la Cuenca Amazónica">
+                    <span>ACCA Conservación</span>
                 </div>
 
-                <!-- 3. Instituciones Aliadas - Bloque 2 -->
-                <div class="logo-display-card">
-                    <img src="logos_aliados_2.png" alt="Instituciones Aliadas: Centro Medicina Andina, Mountain Lodges, Antapaccay, Protos Andes, GFP Subnacional + Embajada de Suiza + Basel Institute, Comunicar para Conservar, AFRONTA, Pronaturaleza, Descosur" class="official-logo-img" style="max-width: 980px;">
+                <!-- 3. Pronaturaleza -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_03_pronaturaleza.jpg" alt="Pronaturaleza">
+                    <span>Pronaturaleza</span>
                 </div>
 
+                <!-- 4. GFP Subnacional + Suiza SECO + Basel Institute -->
+                <div class="ally-logo-box joint-card">
+                    <div class="joint-logos-row">
+                        <img src="logo_aliado_04_gfp_subnacional.jpg" alt="GFP Subnacional">
+                        <img src="logo_aliado_04_suiza_seco.jpg" alt="Cooperación Suiza SECO">
+                        <img src="logo_aliado_04_basel_institute.png" alt="Basel Institute on Governance">
+                    </div>
+                    <span>Programa GFP Subnacional · Cooperación Suiza SECO · Basel Institute</span>
+                </div>
+
+                <!-- 5. SPDA -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_05_spda.png" alt="Sociedad Peruana de Derecho Ambiental">
+                    <span>Sociedad Peruana de Derecho Ambiental (SPDA)</span>
+                </div>
+
+                <!-- 6. San Diego Zoo Wildlife Alliance -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_06_san_diego_zoo.png" alt="San Diego Zoo Wildlife Alliance">
+                    <span>San Diego Zoo Wildlife Alliance</span>
+                </div>
+
+                <!-- 7. Re:wild -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_07_rewild.png" alt="Re:wild">
+                    <span>Re:wild</span>
+                </div>
+
+                <!-- 8. Profonanpe -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_08_profonanpe.jpg" alt="Profonanpe">
+                    <span>Profonanpe</span>
+                </div>
+
+                <!-- 9. Yunkawasi -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_09_yunkawasi.jpg" alt="Yunkawasi">
+                    <span>Yunkawasi</span>
+                </div>
+
+                <!-- 10. MINAM & SERNANP -->
+                <div class="ally-logo-box joint-card">
+                    <div class="joint-logos-row">
+                        <img src="logo_aliado_10_minam.jpg" alt="Ministerio del Ambiente - MINAM">
+                        <img src="logo_aliado_10_sernanp.png" alt="SERNANP Perú">
+                    </div>
+                    <span>Ministerio del Ambiente · SERNANP</span>
+                </div>
+
+                <!-- 11. Antapaccay -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_11_antapaccay.png" alt="Compañía Minera Antapaccay">
+                    <span>Compañía Minera Antapaccay</span>
+                </div>
+
+                <!-- 12. Conservación Internacional -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_12_conservacion_internacional.png" alt="Conservación Internacional Perú">
+                    <span>Conservación Internacional</span>
+                </div>
+
+                <!-- 13. DESCOSUR -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_13_descosur.png" alt="DESCOSUR">
+                    <span>DESCOSUR</span>
+                </div>
+
+                <!-- 14. NCI -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_14_nci.png" alt="Naturaleza y Cultura Internacional">
+                    <span>Naturaleza y Cultura Internacional</span>
+                </div>
+
+                <!-- 15. Instituto de Montaña -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_15_instituto_montana.png" alt="Instituto de Montaña">
+                    <span>Instituto de Montaña</span>
+                </div>
+
+                <!-- 16. Protos Andes -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_16_protos_andes.png" alt="Protos Andes">
+                    <span>Protos Andes</span>
+                </div>
+
+                <!-- 17. AFRONTA -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_17_afronta.png" alt="AFRONTA - Asociación Fronteras Amazónicas">
+                    <span>AFRONTA</span>
+                </div>
+
+                <!-- 18. WWF -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_18_wwf.jpg" alt="WWF Perú">
+                    <span>WWF</span>
+                </div>
+
+                <!-- 19. IBC -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_19_ibc.png" alt="Instituto del Bien Común">
+                    <span>Instituto del Bien Común (IBC)</span>
+                </div>
+
+                <!-- 20. Comunicar para Conservar -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_20_comunicar_para_conservar.png" alt="Comunicar para Conservar">
+                    <span>Comunicar para Conservar</span>
+                </div>
+
+                <!-- 21. Moore Foundation -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_21_moore_foundation.png" alt="Gordon and Betty Moore Foundation">
+                    <span>Moore Foundation</span>
+                </div>
+
+                <!-- 22. ECOAN -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_22_ecoan.png" alt="ECOAN - Asociación Ecosistemas Andinos">
+                    <span>ECOAN</span>
+                </div>
+
+                <!-- 23. KHIPU -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_23_khipu.png" alt="KHIPU">
+                    <span>KHIPU</span>
+                </div>
+
+                <!-- 24. INKATERRA -->
+                <div class="ally-logo-box">
+                    <img src="logo_aliado_24_inkaterra.png" alt="INKATERRA">
+                    <span>INKATERRA</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sede Oficial y Ubicación Google Maps -->
-    <section id="ubicacion" class="location-section">
-        <div class="container reveal">
-            <div class="section-header center">
-                <div class="inca-accent-small" style="margin: 0 auto 1rem;"></div>
-                <h2>Sede Oficial y Cómo Llegar</h2>
-                <p>Ubicación estratégica en el corazón del Centro Histórico de la ciudad del Cusco.</p>
+    <!-- SECCIÓN: UBICACIÓN Y SEDE OFICIAL -->
+    <section class="container location-section" id="ubicacion">
+        <div class="section-header center reveal">
+            <h2>Sede Oficial del Congreso</h2>
+            <div class="inca-accent" style="margin: 0.8rem auto 1.5rem auto;"></div>
+            <p>El evento se desarrollará en el corazón del Centro Histórico de la Ciudad Imperial del Cusco.</p>
+        </div>
+
+        <div class="location-grid reveal">
+            <div class="location-info">
+                <div style="margin-bottom: 1.2rem; border-radius: 10px; overflow: hidden; max-height: 180px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <img src="sede_cusco_paisaje.jpg" alt="Paisaje de Cusco y Sede Oficial" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Sala Ollantaytambo · Municipalidad del Cusco</h3>
+                <p class="location-address">
+                    <strong>Dirección:</strong> Plaza Regocijo (Kusipata) s/n, Centro Histórico de Cusco, Perú.
+                </p>
+                <ul class="location-details-list">
+                    <li>
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>A 1 cuadra de la Plaza de Armas del Cusco</span>
+                    </li>
+                    <li>
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <span>Auditorio Principal, Salas de Trabajo y Exposición Fotográfica</span>
+                    </li>
+                    <li>
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        <span>Horario: 08:30 AM a 06:00 PM</span>
+                    </li>
+                </ul>
+                <a href="https://maps.app.goo.gl/uX3L37x3Vz824wG48" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <span>Abrir en Google Maps</span>
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+                </a>
             </div>
-            <div class="location-grid">
-                <div class="location-info">
-                    <h3>Centro de Convenciones</h3>
-                    <p class="location-address">
-                        <strong>Sala Ollantaytambo</strong><br>
-                        Municipalidad Provincial del Cusco<br>
-                        Plaza Regocijo (a media cuadra de la Plaza de Armas), Cusco - Perú.
-                    </p>
-                    <ul class="location-details-list">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            <span>Ingreso y acreditación desde las 08:00 a.m.</span>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <span>Fácil acceso peatonal y vehicular en Centro Histórico</span>
-                        </li>
-                    </ul>
-                    <a href="https://maps.app.goo.gl/Q1zDi3GxTG8dbVrRA" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Abrir en Google Maps ↗
-                    </a>
-                </div>
-                <div class="map-embed-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1939.653835546939!2d-71.98278129100801!3d-13.516700625902121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd60cbac2ecd1%3A0xcd55c48d696bb8fd!2sCentro%20De%20Convenciones!5e0!3m2!1ses-419!2spe!4v1787930211890!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
+
+            <div class="map-embed-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15517.163447443472!2d-71.9808953827674!3d-13.51773336099188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd60cbac2ecd1%3A0xcd55c48d696bb8fd!2sCentro%20De%20Convenciones!5e0!3m2!1ses!2spe!4v1788303186240!5m2!1ses!2spe" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    title="Ubicación Centro de Convenciones Cusco">
+                </iframe>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER INSTITUCIONAL -->
     <footer class="footer">
         <div class="inca-border-top"></div>
         <div class="container footer-content">
             <div class="footer-info">
-                <h3>III Congreso Nacional de Áreas de Conservación Regional</h3>
-                <p>Cusco, Perú · 6 al 9 de Septiembre · Articulando iniciativas para la gestión de nuestro patrimonio natural y gobernanza territorial.</p>
+                <h3>Gobierno Regional del Cusco</h3>
+                <p>Gerencia Regional de Recursos Naturales y Gestión del Medio Ambiente (GRRNyGMA)</p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">
+                    © 2024 III Congreso Nacional de ACRs. Todos los derechos reservados.
+                </p>
             </div>
             <div class="footer-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre">El Congreso</a>
-                <a href="programa.html">Programa Oficial</a>
+                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html#sobre">El Congreso</a>
                 <a href="acrs.html">Áreas de Conservación</a>
-                <a href="#instituciones">Aliados</a>
-                <a href="#ubicacion">Sede</a>
+                <a href="programa.html">Programa Oficial</a>
+                <a href="index.html#instituciones">Aliados</a>
+                <a href="index.html#ubicacion">Ubicación</a>
             </div>
         </div>
     </footer>
