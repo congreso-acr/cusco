@@ -5,30 +5,35 @@ function initMobileNav() {
     const toggleBtn = document.querySelector('.mobile-nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    if (toggleBtn && navLinks) {
-        toggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleBtn.classList.toggle('open');
-            navLinks.classList.toggle('mobile-open');
-        });
+    if (!toggleBtn || !navLinks) return;
 
-        // Close menu when tapping a link
-        const links = navLinks.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                toggleBtn.classList.remove('open');
-                navLinks.classList.remove('mobile-open');
-            });
-        });
+    // Remove any previous listener by cloning
+    const newToggle = toggleBtn.cloneNode(true);
+    toggleBtn.parentNode.replaceChild(newToggle, toggleBtn);
 
-        // Close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
-                toggleBtn.classList.remove('open');
-                navLinks.classList.remove('mobile-open');
-            }
+    newToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        newToggle.classList.toggle('open');
+        navLinks.classList.toggle('mobile-open');
+    });
+
+    // Close menu when tapping any nav link
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            newToggle.classList.remove('open');
+            navLinks.classList.remove('mobile-open');
         });
-    }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !newToggle.contains(e.target)) {
+            newToggle.classList.remove('open');
+            navLinks.classList.remove('mobile-open');
+        }
+    });
 }
 
 // ==========================================================================
@@ -48,6 +53,16 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', () => {
+        initMobileNav();
+        reveal();
+    });
+} else {
+    initMobileNav();
+    reveal();
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     initMobileNav();
     reveal();
