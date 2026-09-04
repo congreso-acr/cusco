@@ -2495,7 +2495,8 @@ h1, h2, h3, h4 {
 }
 
 
-/* Logos específicamente ampliados */
+
+/* Logos específicamente ampliados a escala 1.4 */
 .ally-logo-box img.logo-boosted,
 .ally-logo-box img[src*="andes_amazon_fund"],
 .ally-logo-box img[src*="acca"],
@@ -2509,10 +2510,21 @@ h1, h2, h3, h4 {
     max-height: 115px !important;
     max-width: 96% !important;
     width: auto !important;
-    transform: scale(1.15);
-    margin-bottom: 0.85rem !important;
+    transform: scale(1.4) !important;
+    transform-origin: center center;
+    margin-top: 0.5rem !important;
+    margin-bottom: 1.1rem !important;
+    transition: transform 0.3s ease;
 }
 
-.ally-logo-box:hover img.logo-boosted {
-    transform: scale(1.2) !important;
+.ally-logo-box:hover img.logo-boosted,
+.ally-logo-box:hover img[src*="andes_amazon_fund"],
+.ally-logo-box:hover img[src*="acca"],
+.ally-logo-box:hover img[src*="pronaturaleza"],
+.ally-logo-box:hover img[src*="san_diego_zoo"],
+.ally-logo-box:hover img[src*="profonanpe"],
+.ally-logo-box:hover img[src*="yunkawasi"],
+.ally-logo-box:hover img[src*="protos_andes"],
+.ally-logo-box:hover img[src*="khipu"] {
+    transform: scale(1.48) !important;
 }
