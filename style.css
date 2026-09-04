@@ -3350,3 +3350,244 @@ h1, h2, h3, h4 {
         padding: 0.35rem 0.65rem;
     }
 }
+
+
+/* ==========================================================================
+   PROGRAMA OFICIAL: TARJETAS DE DÍA, BLOQUES, PONENTES, PANELES Y SUBTABLAS
+   ========================================================================== */
+.day-overview-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 2.2rem;
+    border-left: 6px solid var(--color-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border-top: 1px solid var(--color-gray-200);
+    border-right: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.day-badge {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    background: rgba(140, 24, 43, 0.08);
+    color: var(--color-primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.day-overview-header h3 {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: 0.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.day-overview-header p {
+    font-size: 0.95rem;
+    color: var(--color-gray-700);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Bloque Tags */
+.schedule-block-tag {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    background: var(--color-gray-200);
+    color: var(--color-gray-700);
+    border-radius: 6px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tag-ceremony {
+    background: rgba(229, 169, 59, 0.2);
+    color: #92400e;
+    border: 1px solid rgba(229, 169, 59, 0.4);
+}
+
+.tag-magistral {
+    background: rgba(140, 24, 43, 0.12);
+    color: var(--color-primary);
+    border: 1px solid rgba(140, 24, 43, 0.25);
+}
+
+.tag-panel {
+    background: rgba(13, 148, 136, 0.12);
+    color: #0f766e;
+    border: 1px solid rgba(13, 148, 136, 0.25);
+}
+
+.tag-break {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+/* Speaker Pill */
+.speaker-pill {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+    border: 1px solid var(--color-gray-300);
+    font-size: 0.9rem;
+}
+
+.speaker-name {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.speaker-inst {
+    color: var(--color-gray-700);
+    font-size: 0.85rem;
+    border-left: 1px solid var(--color-gray-300);
+    padding-left: 0.5rem;
+}
+
+/* Panel Box */
+.panel-box {
+    margin-top: 0.8rem;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid rgba(13, 148, 136, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.panel-title {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #0f766e;
+    margin-bottom: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.panel-members-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.panel-members-list li {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.panel-members-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0d9488;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.panel-members-list .inst {
+    color: var(--color-gray-700);
+    font-size: 0.86rem;
+}
+
+/* Subtable for ceremonies / multi-steps */
+.program-subtable {
+    margin-top: 0.9rem;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-300);
+}
+
+.subtable-row {
+    display: grid;
+    grid-template-columns: 120px 1.4fr 1.6fr;
+    gap: 0.8rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--color-gray-200);
+    font-size: 0.88rem;
+    align-items: center;
+}
+
+.subtable-row:last-child {
+    border-bottom: none;
+}
+
+.subtable-row:nth-child(even) {
+    background: var(--color-bg-alt);
+}
+
+.sub-time {
+    font-weight: 800;
+    color: var(--color-primary);
+    font-size: 0.84rem;
+}
+
+.sub-act {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.sub-resp {
+    color: var(--color-gray-700);
+    font-size: 0.84rem;
+    line-height: 1.35;
+}
+
+/* Highlights */
+.highlight-schedule {
+    background: rgba(140, 24, 43, 0.02) !important;
+    border-radius: 12px;
+    padding: 1.6rem 1.4rem !important;
+    margin: 0.8rem 0;
+    border: 1px solid rgba(140, 24, 43, 0.15) !important;
+}
+
+.highlight-panel {
+    background: rgba(13, 148, 136, 0.02) !important;
+    border-radius: 12px;
+    padding: 1.6rem 1.4rem !important;
+    margin: 0.8rem 0;
+    border: 1px solid rgba(13, 148, 136, 0.2) !important;
+}
+
+.break-item {
+    opacity: 0.9;
+    padding: 1rem 0 !important;
+}
+
+@media (max-width: 768px) {
+    .subtable-row {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        padding: 0.8rem;
+    }
+    .speaker-pill {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    .speaker-inst {
+        border-left: none;
+        padding-left: 0;
+    }
+}

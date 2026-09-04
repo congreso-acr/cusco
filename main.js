@@ -71,24 +71,49 @@ window.addEventListener("DOMContentLoaded", () => {
 // ==========================================================================
 // TABS LOGIC (PROGRAMA)
 // ==========================================================================
-const tabBtns = document.querySelectorAll('.tab-btn');
-const schedulePanes = document.querySelectorAll('.schedule-pane');
+function initProgramTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const schedulePanes = document.querySelectorAll('.schedule-pane');
 
-if (tabBtns.length > 0) {
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            schedulePanes.forEach(p => p.classList.remove('active'));
+    if (tabBtns.length === 0) return;
 
-            btn.classList.add('active');
-            const targetId = btn.getAttribute('data-target');
-            const pane = document.getElementById(targetId);
-            if (pane) {
-                pane.classList.add('active');
+    function activateTab(targetId) {
+        tabBtns.forEach(b => {
+            if (b.getAttribute('data-target') === targetId) {
+                b.classList.add('active');
+            } else {
+                b.classList.remove('active');
             }
         });
+
+        schedulePanes.forEach(p => {
+            if (p.id === targetId) {
+                p.classList.add('active');
+            } else {
+                p.classList.remove('active');
+            }
+        });
+    }
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            activateTab(targetId);
+            window.location.hash = targetId;
+        });
     });
+
+    // Check URL Hash on page load (e.g. #dia2, #dia3, #dia4)
+    if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '');
+        if (['dia1', 'dia2', 'dia3', 'dia4'].includes(hash)) {
+            activateTab(hash);
+        }
+    }
 }
+
+document.addEventListener('DOMContentLoaded', initProgramTabs);
+initProgramTabs();
 
 // ==========================================================================
 // INTERACTIVE MAP (POLYGONS, BADGES & LEGEND CLICK & SMOOTH SCROLL)
