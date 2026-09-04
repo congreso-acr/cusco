@@ -91,15 +91,20 @@ if (tabBtns.length > 0) {
 }
 
 // ==========================================================================
-// INTERACTIVE MAP (POLYGONS & BADGES CLICK & SMOOTH SCROLL)
+// INTERACTIVE MAP (POLYGONS, BADGES & LEGEND CLICK & SMOOTH SCROLL)
 // ==========================================================================
 function scrollToAcrSection(acrId) {
     if (!acrId) return;
-    const targetElement = document.getElementById('acr-' + acrId);
+    const cleanId = acrId.replace('#acr-', '').replace('acr-', '');
+    const targetElement = document.getElementById('acr-' + cleanId) || document.getElementById(cleanId);
+    
     if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+        targetElement.classList.remove('highlight-pulse');
+        void targetElement.offsetWidth; // Trigger reflow to restart animation
         targetElement.classList.add('highlight-pulse');
+        
         setTimeout(() => {
             targetElement.classList.remove('highlight-pulse');
         }, 2500);
@@ -111,7 +116,7 @@ function initInteractiveFeatures() {
     const tooltipTitle = document.getElementById('tooltip-title');
     const tooltipArea = document.getElementById('tooltip-area');
     const legendItems = document.querySelectorAll('.legend-item');
-    const interactiveElements = document.querySelectorAll('.map-acr-polygon, .map-acr-badge');
+    const interactiveElements = document.querySelectorAll('.map-acr-polygon, .map-acr-badge, .map-acr-link');
 
     interactiveElements.forEach(el => {
         const acrId = el.getAttribute('data-acr');
@@ -119,11 +124,13 @@ function initInteractiveFeatures() {
         const acrArea = el.getAttribute('data-area');
 
         el.addEventListener('mouseenter', () => {
-            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
-            related.forEach(r => r.classList.add('active-highlight'));
+            if (acrId) {
+                const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
+                related.forEach(r => r.classList.add('active-highlight'));
+            }
 
             if (tooltip && tooltipTitle) {
-                tooltipTitle.textContent = acrName || 'Área de Conservación';
+                tooltipTitle.textContent = acrName || 'Área de Conservación Regional';
                 if (tooltipArea) {
                     tooltipArea.textContent = acrArea ? 'Superficie: ' + acrArea : '';
                 }
@@ -131,14 +138,23 @@ function initInteractiveFeatures() {
                 tooltip.style.transform = 'translateY(0)';
             }
 
-            legendItems.forEach(item => {
-                if (item.getAttribute('data-acr') === acrId) item.classList.add('active');
-            });
+            if (acrId) {
+                legendItems.forEach(item => {
+                    if (item.getAttribute('data-acr') === acrId) item.classList.add('active');
+                });
+            }
         });
 
         el.addEventListener('mouseleave', () => {
-            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
-            related.forEach(r => r.classList.remove('active-highlight'));
+            if (acrId) {
+                const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
+                related.forEach(r => r.classList.remove('active-highlight'));
+            }
+
+            if (tooltip) {
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translateY(10px)';
+            }
 
             legendItems.forEach(item => item.classList.remove('active'));
         });
@@ -153,13 +169,17 @@ function initInteractiveFeatures() {
         const acrId = item.getAttribute('data-acr');
 
         item.addEventListener('mouseenter', () => {
-            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
-            related.forEach(r => r.classList.add('active-highlight'));
+            if (acrId) {
+                const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
+                related.forEach(r => r.classList.add('active-highlight'));
+            }
         });
 
         item.addEventListener('mouseleave', () => {
-            const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
-            related.forEach(r => r.classList.remove('active-highlight'));
+            if (acrId) {
+                const related = document.querySelectorAll('[data-acr="' + acrId + '"]');
+                related.forEach(r => r.classList.remove('active-highlight'));
+            }
         });
 
         item.addEventListener('click', (e) => {
@@ -167,11 +187,19 @@ function initInteractiveFeatures() {
             scrollToAcrSection(acrId);
         });
     });
-}
 
-document.addEventListener('DOMContentLoaded', initInteractiveFeatures);
-initInteractiveFeatures();
-initMobileNav();
+    // Also support smooth scroll and pulse for quick nav pill buttons and hash links
+    document.querySelectorAll('.quick-nav-pills a, a[href^="#acr-"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#acr-')) {
+                e.preventDefault();
+                const acrId = href.replace('#acr-', '');
+                scrollToAcrSection(acrId);
+            }
+        });
+    });
+}
 
 // ==========================================================================
 // TOGGLE EXPAND/COLLAPSE JURADO BIO
