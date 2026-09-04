@@ -2496,13 +2496,45 @@ h1, h2, h3, h4 {
 
 
 
-/* Logos específicamente ampliados a escala 1.4 */
-.ally-logo-box img.logo-boosted,
+
+/* ==========================================================================
+   ESCALAS PERSONALIZADAS DE LOGOS DESTACADOS
+   ========================================================================== */
+
+/* 1. Logos a escala 1.6 (Red de ACR, Andes Amazon Fund, San Diego Zoo, Profonanpe) */
 .ally-logo-box img[src*="andes_amazon_fund"],
-.ally-logo-box img[src*="acca"],
-.ally-logo-box img[src*="pronaturaleza"],
 .ally-logo-box img[src*="san_diego_zoo"],
 .ally-logo-box img[src*="profonanpe"],
+.organizer-card img[src*="logo_apoyo_red_acr"] {
+    height: 105px !important;
+    max-height: 115px !important;
+    max-width: 96% !important;
+    width: auto !important;
+    transform: scale(1.6) !important;
+    transform-origin: center center;
+    margin-top: 0.6rem !important;
+    margin-bottom: 1.3rem !important;
+    transition: transform 0.3s ease;
+}
+
+.organizer-card img[src*="logo_apoyo_red_acr"] {
+    height: 115px !important;
+    max-height: 125px !important;
+    transform: scale(1.6) !important;
+    margin-top: 0.8rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.ally-logo-box:hover img[src*="andes_amazon_fund"],
+.ally-logo-box:hover img[src*="san_diego_zoo"],
+.ally-logo-box:hover img[src*="profonanpe"],
+.organizer-card:hover img[src*="logo_apoyo_red_acr"] {
+    transform: scale(1.68) !important;
+}
+
+/* 2. Logos a escala 1.4 (ACCA, Pronaturaleza, Yunkawasi, Protos Andes, Khipu) */
+.ally-logo-box img[src*="acca"],
+.ally-logo-box img[src*="pronaturaleza"],
 .ally-logo-box img[src*="yunkawasi"],
 .ally-logo-box img[src*="protos_andes"],
 .ally-logo-box img[src*="khipu"] {
@@ -2517,12 +2549,8 @@ h1, h2, h3, h4 {
     transition: transform 0.3s ease;
 }
 
-.ally-logo-box:hover img.logo-boosted,
-.ally-logo-box:hover img[src*="andes_amazon_fund"],
 .ally-logo-box:hover img[src*="acca"],
 .ally-logo-box:hover img[src*="pronaturaleza"],
-.ally-logo-box:hover img[src*="san_diego_zoo"],
-.ally-logo-box:hover img[src*="profonanpe"],
 .ally-logo-box:hover img[src*="yunkawasi"],
 .ally-logo-box:hover img[src*="protos_andes"],
 .ally-logo-box:hover img[src*="khipu"] {
