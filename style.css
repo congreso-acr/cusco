@@ -2493,3 +2493,26 @@ h1, h2, h3, h4 {
         height: 90px;
     }
 }
+
+
+/* Logos específicamente ampliados */
+.ally-logo-box img.logo-boosted,
+.ally-logo-box img[src*="andes_amazon_fund"],
+.ally-logo-box img[src*="acca"],
+.ally-logo-box img[src*="pronaturaleza"],
+.ally-logo-box img[src*="san_diego_zoo"],
+.ally-logo-box img[src*="profonanpe"],
+.ally-logo-box img[src*="yunkawasi"],
+.ally-logo-box img[src*="protos_andes"],
+.ally-logo-box img[src*="khipu"] {
+    height: 105px !important;
+    max-height: 115px !important;
+    max-width: 96% !important;
+    width: auto !important;
+    transform: scale(1.15);
+    margin-bottom: 0.85rem !important;
+}
+
+.ally-logo-box:hover img.logo-boosted {
+    transform: scale(1.2) !important;
+}
