@@ -1331,6 +1331,7 @@ h1, h2, h3, h4 {
     color: #FFFFFF;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
+.status-en { background-color: rgba(220, 38, 38, 0.95); }
 .status-vu { background-color: rgba(217, 119, 6, 0.95); }
 .status-nt { background-color: rgba(202, 138, 4, 0.95); }
 .status-lc { background-color: rgba(5, 150, 105, 0.95); }
