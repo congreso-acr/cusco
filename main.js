@@ -325,28 +325,34 @@ document.addEventListener('DOMContentLoaded', initPhotoLightbox);
 
 
 // ==========================================================================
-// TOGGLE NOCHE CULTURAL MINI PROGRAM
+// TOGGLE NOCHE CULTURAL MINI PROGRAM (ROBUST WITH CLASS TOGGLE)
 // ==========================================================================
 function initNocheCulturalToggle() {
     const toggleBtn = document.getElementById('btn-toggle-noche-cultural');
     const miniProg = document.getElementById('cultural-mini-program');
 
-    if (toggleBtn && miniProg) {
-        toggleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isHidden = miniProg.style.display === 'none' || miniProg.style.display === '';
-            if (isHidden) {
-                miniProg.style.display = 'block';
-                toggleBtn.querySelector('span').textContent = 'Ocultar programa de la Noche Cultural ▴';
-                toggleBtn.setAttribute('aria-expanded', 'true');
-            } else {
-                miniProg.style.display = 'none';
-                toggleBtn.querySelector('span').textContent = 'Ver programa de la Noche Cultural ▾';
-                toggleBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
+    if (!toggleBtn || !miniProg) return;
+    if (toggleBtn.dataset.initialized === 'true') return;
+    toggleBtn.dataset.initialized = 'true';
+
+    toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = miniProg.classList.toggle('active');
+        toggleBtn.classList.toggle('open', isOpen);
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        
+        const labelSpan = toggleBtn.querySelector('.btn-cultural-text');
+        if (labelSpan) {
+            labelSpan.textContent = isOpen 
+                ? 'Ocultar desglose de la Noche Cultural' 
+                : 'Ver programa detallado de la Noche Cultural';
+        }
+    });
 }
 
-document.addEventListener('DOMContentLoaded', initNocheCulturalToggle);
-initNocheCulturalToggle();
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNocheCulturalToggle);
+} else {
+    initNocheCulturalToggle();
+}

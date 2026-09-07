@@ -613,7 +613,7 @@
                         </div>
                     </div>
 
-                    <div class="schedule-item highlight-schedule" id="noche-cultural-item">
+                                        <div class="schedule-item highlight-schedule" id="noche-cultural-item">
                         <div class="time">17:30 - 19:10</div>
                         <div class="details">
                             <span class="schedule-block-tag tag-ceremony">Espacios complementarios</span>
@@ -621,39 +621,76 @@
                             <p>Patio Principal, Municipalidad Provincial del Cusco (MPC) · Apertura sinfónica, proyecciones institucionales y danzas tradicionales.</p>
                             
                             <button type="button" class="btn-toggle-cultural" id="btn-toggle-noche-cultural" aria-expanded="false">
-                                <span>Ver programa de la Noche Cultural ▾</span>
+                                <span class="btn-cultural-icon">🎭</span>
+                                <span class="btn-cultural-text">Ver programa detallado de la Noche Cultural</span>
+                                <span class="btn-cultural-chevron">▾</span>
                             </button>
 
-                            <div class="cultural-mini-program" id="cultural-mini-program" style="display: none;">
-                                <div class="program-subtable" style="margin-top: 1rem;">
-                                    <div class="subtable-row">
-                                        <span class="sub-time">17:30 - 18:00</span>
-                                        <span class="sub-act">Apertura de la Noche Cultural</span>
-                                        <span class="sub-resp">Presentación de la Orquesta Sinfónica de la Universidad Andina del Cusco (UAC).</span>
+                            <div class="cultural-mini-program" id="cultural-mini-program">
+                                <div class="cultural-timeline-container">
+                                    <div class="cultural-sub-item">
+                                        <div class="cultural-sub-time">17:30 - 18:00</div>
+                                        <div class="cultural-sub-details">
+                                            <span class="schedule-block-tag tag-ceremony">Apertura Sinfónica</span>
+                                            <h5>Apertura de la Noche Cultural</h5>
+                                            <p>Concierto de gala y bienvenida musical a las delegaciones de todas las regiones.</p>
+                                            <div class="speaker-pill">
+                                                <span class="speaker-name">🎵 Orquesta Sinfónica de la UAC</span>
+                                                <span class="speaker-inst">Universidad Andina del Cusco</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="subtable-row">
-                                        <span class="sub-time">18:00 - 18:30</span>
-                                        <span class="sub-act">Proyección de video institucional</span>
-                                        <span class="sub-resp">Video del Gobierno Regional de Cusco: <em>“Áreas de Conservación Regional: naturaleza que protege nuestro presente y construye nuestro futuro”</em>.</span>
+
+                                    <div class="cultural-sub-item">
+                                        <div class="cultural-sub-time">18:00 - 18:30</div>
+                                        <div class="cultural-sub-details">
+                                            <span class="schedule-block-tag tag-magistral">Proyección Audiovisual</span>
+                                            <h5>Proyección de video institucional</h5>
+                                            <div class="cultural-video-pill">
+                                                <span class="video-tag">🎬 Video Institucional GORE Cusco</span>
+                                                <span class="video-quote">“Áreas de Conservación Regional: naturaleza que protege nuestro presente y construye nuestro futuro”</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="subtable-row">
-                                        <span class="sub-time">18:30 - 18:40</span>
-                                        <span class="sub-act">Proyección del video nacional de las ACR del Perú</span>
-                                        <span class="sub-resp">Presentación de la diversidad, identidad y experiencias de conservación desarrolladas desde las regiones.</span>
+
+                                    <div class="cultural-sub-item">
+                                        <div class="cultural-sub-time">18:30 - 18:40</div>
+                                        <div class="cultural-sub-details">
+                                            <span class="schedule-block-tag tag-magistral">Proyección Audiovisual</span>
+                                            <h5>Proyección del video nacional de las ACR del Perú</h5>
+                                            <p>Presentación de la diversidad biológica, identidad territorial y experiencias exitosas de conservación impulsadas desde los gobiernos regionales.</p>
+                                        </div>
                                     </div>
-                                    <div class="subtable-row">
-                                        <span class="sub-time">18:40 - 19:10</span>
-                                        <span class="sub-act">Presentación artística y activación cultural</span>
-                                        <span class="sub-resp">
-                                            <strong>Danzas representativas de la identidad cultural y territorial:</strong>
-                                            <ul class="cultural-dances-list">
-                                                <li>🎭 Ccatcca Pukllay</li>
-                                                <li>🎭 Sarge</li>
-                                                <li>🎭 Sonqonakuy</li>
-                                                <li>🎭 Batiorem</li>
-                                                <li>🎭 Estampa Paucartambina</li>
-                                            </ul>
-                                        </span>
+
+                                    <div class="cultural-sub-item">
+                                        <div class="cultural-sub-time">18:40 - 19:10</div>
+                                        <div class="cultural-sub-details">
+                                            <span class="schedule-block-tag tag-panel">Danzas y Tradición</span>
+                                            <h5>Presentación artística y activación cultural</h5>
+                                            <p>Muestra folclórica en vivo con danzas representativas de la identidad cultural y territorial:</p>
+                                            <div class="cultural-dances-grid">
+                                                <div class="cultural-dance-card">
+                                                    <span class="dance-icon">🎭</span>
+                                                    <span class="dance-name">Ccatcca Pukllay</span>
+                                                </div>
+                                                <div class="cultural-dance-card">
+                                                    <span class="dance-icon">🎭</span>
+                                                    <span class="dance-name">Sarge</span>
+                                                </div>
+                                                <div class="cultural-dance-card">
+                                                    <span class="dance-icon">🎭</span>
+                                                    <span class="dance-name">Sonqonakuy</span>
+                                                </div>
+                                                <div class="cultural-dance-card">
+                                                    <span class="dance-icon">🎭</span>
+                                                    <span class="dance-name">Batiorem</span>
+                                                </div>
+                                                <div class="cultural-dance-card">
+                                                    <span class="dance-icon">🎭</span>
+                                                    <span class="dance-name">Estampa Paucartambina</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
