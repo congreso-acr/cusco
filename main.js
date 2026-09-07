@@ -322,3 +322,31 @@ function initPhotoLightbox() {
 }
 
 document.addEventListener('DOMContentLoaded', initPhotoLightbox);
+
+
+// ==========================================================================
+// TOGGLE NOCHE CULTURAL MINI PROGRAM
+// ==========================================================================
+function initNocheCulturalToggle() {
+    const toggleBtn = document.getElementById('btn-toggle-noche-cultural');
+    const miniProg = document.getElementById('cultural-mini-program');
+
+    if (toggleBtn && miniProg) {
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isHidden = miniProg.style.display === 'none' || miniProg.style.display === '';
+            if (isHidden) {
+                miniProg.style.display = 'block';
+                toggleBtn.querySelector('span').textContent = 'Ocultar programa de la Noche Cultural ▴';
+                toggleBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                miniProg.style.display = 'none';
+                toggleBtn.querySelector('span').textContent = 'Ver programa de la Noche Cultural ▾';
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initNocheCulturalToggle);
+initNocheCulturalToggle();

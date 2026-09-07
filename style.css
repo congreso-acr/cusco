@@ -3591,3 +3591,54 @@ h1, h2, h3, h4 {
         padding-left: 0;
     }
 }
+
+
+/* ==========================================================================
+   NOCHE CULTURAL TOGGLE & MINI PROGRAM
+   ========================================================================== */
+.btn-toggle-cultural {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
+    padding: 0.5rem 1.15rem;
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: inherit;
+}
+
+.btn-toggle-cultural:hover {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(140, 24, 43, 0.25);
+}
+
+.cultural-mini-program {
+    animation: fadeIn 0.35s ease forwards;
+}
+
+.cultural-dances-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+}
+
+.cultural-dances-list li {
+    background: var(--color-bg-alt);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    border: 1px solid var(--color-gray-300);
+    font-weight: 600;
+    color: var(--color-text);
+}
