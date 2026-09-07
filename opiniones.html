@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muro de Opiniones y Voces por la Conservación · III Congreso Nacional ACR · Cusco 2026</title>
+    <link rel="icon" type="image/png" href="logo_gore_cusco.png">
+    <meta name="description" content="Espacio público de participación, propuestas ciudadanas y voces de las delegaciones para el III Congreso Nacional de Áreas de Conservación Regional y la Declaración del Cusco 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar Institucional -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo-link">
+                <img src="logo_gore_cusco.png" alt="Gobierno Regional Cusco" class="nav-logo-gore">
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+                        <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#sobre">El Congreso</a></li>
+                <li><a href="acrs.html">Áreas de Conservación</a></li>
+                <li><a href="programa.html">Programa</a></li>
+                <li><a href="concurso-fotografia.html">Concurso Fotografía</a></li>
+                <li><a href="opiniones.html" class="active">Muro de Voces</a></li>
+                <li><a href="index.html#instituciones">Aliados</a></li>
+                <li><a href="index.html#ubicacion">Ubicación</a></li>
+                <li class="mobile-only-btn"><a href="#formulario-opinion" class="btn-primary">Dejar Opinión</a></li>
+            </ul>
+
+            <a href="#formulario-opinion" class="btn-primary nav-btn desktop-only">Dejar Opinión</a>
+        </div>
+    </nav>
+
+    <!-- Header Banner Subpágina Opiniones -->
+    <header class="subpage-hero subpage-hero-opiniones">
+        <div class="container reveal">
+            <div class="subpage-badge">PARTICIPACIÓN CIUDADANA & DELEGACIONES</div>
+            <h1 class="subpage-title">Muro de Voces por la Conservación Regional</h1>
+            <div class="inca-accent-small"></div>
+            <p class="subpage-lead">
+                Comparte tus propuestas, reflexiones, testimonios y compromisos hacia la <strong>Declaración del Cusco 2026</strong>. Todas las opiniones son públicas y contribuyen a la agenda nacional de las ACR.
+            </p>
+        </div>
+    </header>
+
+    <main class="opiniones-main-container">
+        <div class="container">
+            
+            <!-- Barra de Estadísticas Rápidas -->
+            <div class="opinions-stats-grid reveal">
+                <div class="stat-box">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-content">
+                        <span class="stat-num" id="stat-total-opinions">0</span>
+                        <span class="stat-label">Opiniones y Propuestas</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">🗺️</div>
+                    <div class="stat-content">
+                        <span class="stat-num" id="stat-total-regions">0</span>
+                        <span class="stat-label">Regiones Representadas</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-content">
+                        <span class="stat-num" id="stat-total-likes">0</span>
+                        <span class="stat-label">Apoyos Ciudadanos</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">📜</div>
+                    <div class="stat-content">
+                        <span class="stat-num">Declaración 2026</span>
+                        <span class="stat-label">Construcción Colectiva</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layout Principal: Formulario + Muro -->
+            <div class="opinions-layout-grid">
+                
+                <!-- Columna Izquierda: Formulario de Envío -->
+                <aside class="opinion-form-wrapper reveal" id="formulario-opinion">
+                    <div class="opinion-form-card">
+                        <div class="form-header">
+                            <span class="form-tag">✨ Tu Voz Cuenta</span>
+                            <h3>Publica tu Opinión o Propuesta</h3>
+                            <p>Envía tu aporte para ser compartido públicamente con todas las delegaciones del país.</p>
+                        </div>
+
+                        <form id="form-opinion" class="opinion-form">
+                            <!-- Honeypot anti-spam -->
+                            <div style="display:none;">
+                                <input type="text" name="website_trap" id="website_trap" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="opinion-author">Nombre y Apellidos <span class="required">*</span></label>
+                                <input type="text" id="opinion-author" placeholder="Ej. Lic. Carlos Quispe / Ing. María Salazar" required maxlength="80">
+                            </div>
+
+                            <div class="form-checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="opinion-anonymous">
+                                    <span>Publicar de manera anónima (como <em>Ciudadano / Delegado</em>)</span>
+                                </label>
+                            </div>
+
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="opinion-region">Región / Departamento <span class="required">*</span></label>
+                                    <select id="opinion-region" required>
+                                        <option value="" disabled selected>Selecciona tu región...</option>
+                                        <option value="Cusco">Cusco (Sede)</option>
+                                        <option value="Loreto">Loreto</option>
+                                        <option value="San Martín">San Martín</option>
+                                        <option value="Amazonas">Amazonas</option>
+                                        <option value="Huánuco">Huánuco</option>
+                                        <option value="Piura">Piura</option>
+                                        <option value="Cajamarca">Cajamarca</option>
+                                        <option value="Ucayali">Ucayali</option>
+                                        <option value="Madre de Dios">Madre de Dios</option>
+                                        <option value="Tumbes">Tumbes</option>
+                                        <option value="Lambayeque">Lambayeque</option>
+                                        <option value="La Libertad">La Libertad</option>
+                                        <option value="Ancash">Ancash</option>
+                                        <option value="Lima">Lima</option>
+                                        <option value="Arequipa">Arequipa</option>
+                                        <option value="Puno">Puno</option>
+                                        <option value="Apurímac">Apurímac</option>
+                                        <option value="Ayacucho">Ayacucho</option>
+                                        <option value="Huancavelica">Huancavelica</option>
+                                        <option value="Junín">Junín</option>
+                                        <option value="Pasco">Pasco</option>
+                                        <option value="Ica">Ica</option>
+                                        <option value="Moquegua">Moquegua</option>
+                                        <option value="Tacna">Tacna</option>
+                                        <option value="Nacional">Nivel Nacional</option>
+                                        <option value="Internacional">Delegación Internacional</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="opinion-institution">Institución u Organización</label>
+                                    <input type="text" id="opinion-institution" placeholder="Ej. GORE, SERNANP, Comunidad, ONG, Universidad..." maxlength="90">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="opinion-category">Eje Temático del Congreso <span class="required">*</span></label>
+                                <select id="opinion-category" required>
+                                    <option value="" disabled selected>Selecciona el eje temático...</option>
+                                    <option value="gobernanza">🏛️ Gobernanza Territorial y Sistemas Regionales</option>
+                                    <option value="finanzas">💰 Sostenibilidad Financiera y MERESE</option>
+                                    <option value="bioeconomia">🍯 Bioeconomía, Miel y Negocios Verdes</option>
+                                    <option value="biodiversidad">🦅 Monitoreo, Deforestación y Fauna Emblemática</option>
+                                    <option value="comunidad">🤝 Participación Social y Mujeres Conservacionistas</option>
+                                    <option value="declaracion">📜 Propuestas para la Declaración del Cusco 2026</option>
+                                    <option value="general">🌿 Mensaje General de Conservación</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="opinion-message">Tu Opinión, Propuesta o Reflexión <span class="required">*</span></label>
+                                <textarea id="opinion-message" rows="4" placeholder="Escribe aquí tu mensaje, aporte técnico, propuesta para los acuerdos del congreso o saludo institucional..." required maxlength="500"></textarea>
+                                <div class="char-count-wrapper">
+                                    <span id="char-counter">0 / 500 caracteres</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" id="btn-submit-opinion" class="btn-primary btn-submit-full">
+                                <span class="btn-text">Publicar en el Muro de Voces ✨</span>
+                                <span class="btn-spinner" style="display: none;">⏳ Enviando...</span>
+                            </button>
+
+                            <div id="form-feedback" class="form-feedback-box" style="display: none;"></div>
+                        </form>
+                    </div>
+                </aside>
+
+                <!-- Columna Derecha: Muro de Opiniones en Vivo -->
+                <section class="opinions-wall-wrapper">
+                    
+                    <!-- Barra de Filtros y Búsqueda -->
+                    <div class="wall-controls-bar reveal">
+                        <div class="search-input-wrapper">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="filter-search" placeholder="Buscar por palabra clave, nombre o institución...">
+                        </div>
+
+                        <div class="filter-dropdowns">
+                            <select id="filter-category" class="filter-select">
+                                <option value="all">Todos los Ejes Temáticos</option>
+                                <option value="gobernanza">🏛️ Gobernanza</option>
+                                <option value="finanzas">💰 Finanzas y MERESE</option>
+                                <option value="bioeconomia">🍯 Bioeconomía</option>
+                                <option value="biodiversidad">🦅 Biodiversidad</option>
+                                <option value="comunidad">🤝 Comunidad</option>
+                                <option value="declaracion">📜 Declaración del Cusco</option>
+                                <option value="general">🌿 General</option>
+                            </select>
+
+                            <select id="filter-region" class="filter-select">
+                                <option value="all">Todas las Regiones</option>
+                                <option value="Cusco">Cusco</option>
+                                <option value="Loreto">Loreto</option>
+                                <option value="San Martín">San Martín</option>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Huánuco">Huánuco</option>
+                                <option value="Piura">Piura</option>
+                                <option value="Cajamarca">Cajamarca</option>
+                                <option value="Ucayali">Ucayali</option>
+                                <option value="Madre de Dios">Madre de Dios</option>
+                                <option value="Tumbes">Tumbes</option>
+                                <option value="Otros">Otras Regiones / Nacional</option>
+                            </select>
+
+                            <select id="filter-sort" class="filter-select">
+                                <option value="newest">Más Recientes</option>
+                                <option value="popular">Más Apoyadas (Likes ❤️)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Grilla de Tarjetas de Opinión -->
+                    <div id="opinions-grid" class="opinions-cards-grid reveal">
+                        <!-- Las tarjetas se generan dinámicamente con JavaScript / Firebase -->
+                        <div class="opinions-loading-skeleton">
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                        </div>
+                    </div>
+
+                    <!-- Mensaje cuando no hay resultados de búsqueda -->
+                    <div id="no-results-message" class="no-results-box" style="display: none;">
+                        <span class="no-results-icon">🍃</span>
+                        <h4>No se encontraron opiniones con esos filtros</h4>
+                        <p>Sé el primero en compartir tu propuesta sobre este tema o prueba cambiando los filtros de búsqueda.</p>
+                        <a href="#formulario-opinion" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Escribir Opinión</a>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer class="footer">
+        <div class="inca-border-top"></div>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>III Congreso Nacional de Áreas de Conservación Regional</h3>
+                <p>Cusco, Perú · 6 al 9 de Setiembre de 2026 · “Gobernanza, Gestión Territorial y Sostenibilidad para la Conservación Regional”</p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">
+                    © 2026 Gobierno Regional del Cusco · Gerencia Regional de Recursos Naturales y Gestión Ambiental.
+                </p>
+            </div>
+                        <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="acrs.html">Áreas de Conservación</a>
+                <a href="programa.html">Programa</a>
+                <a href="concurso-fotografia.html">Concurso Fotografía</a>
+                <a href="opiniones.html" class="active">Muro de Voces</a>
+                <a href="index.html#ubicacion">Ubicación</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK Modular v10 via CDN -->
+    <script type="module" src="opiniones.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
