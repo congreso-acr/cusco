@@ -4335,3 +4335,156 @@ h1, h2, h3, h4 {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   CARD DESTACADA: APP CHASKI (ASISTENTE DE VOZ)
+   ========================================================================== */
+.chaski-callout-card {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+    border-radius: 18px;
+    padding: 2.2rem 2.5rem;
+    margin-bottom: 2.8rem;
+    border: 1px solid rgba(229, 169, 59, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+    color: #FFFFFF;
+}
+
+.chaski-callout-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-primary));
+}
+
+.chaski-card-left {
+    max-width: 720px;
+}
+
+.chaski-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.9rem;
+    background: rgba(229, 169, 59, 0.15);
+    color: var(--color-accent);
+    border: 1px solid rgba(229, 169, 59, 0.3);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+.chaski-card-left h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 0.45rem;
+    font-family: var(--font-heading);
+}
+
+.chaski-card-left p {
+    font-size: 0.92rem;
+    color: #CBD5E1;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.chaski-card-left strong {
+    color: var(--color-accent);
+}
+
+.chaski-card-right {
+    flex-shrink: 0;
+}
+
+.btn-chaski-app {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 1.6rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #D97706 100%);
+    color: #1E293B;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px rgba(217, 119, 6, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    white-space: nowrap;
+}
+
+.btn-chaski-app:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(217, 119, 6, 0.5);
+    background: linear-gradient(135deg, #FDE68A 0%, var(--color-accent) 100%);
+    color: #0F172A;
+}
+
+.btn-chaski-app .mic-wave-icon {
+    font-size: 1.25rem;
+    animation: micPulse 2s infinite ease-in-out;
+}
+
+@keyframes micPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.btn-chaski-app .external-icon {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.form-chaski-hint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(229, 169, 59, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(229, 169, 59, 0.25);
+    font-size: 0.82rem;
+    color: var(--color-text);
+    margin-top: 0.1rem;
+}
+
+.form-chaski-hint a {
+    color: #92400e;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.form-chaski-hint a:hover {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+    .chaski-callout-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.8rem;
+        gap: 1.4rem;
+    }
+    .btn-chaski-app {
+        width: 100%;
+        justify-content: center;
+    }
+}
