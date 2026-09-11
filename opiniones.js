@@ -29,81 +29,8 @@ const firebaseConfig = {
     appId: "1:1234567890:web:abcdef123456"
 };
 
-// Semillas iniciales representativas para asegurar visualización perfecta inmediata
-const SEED_OPINIONS = [
-    {
-        id: "seed-1",
-        author: "Blgo. José Luis Mancilla Quispe",
-        anonymous: false,
-        region: "Cusco",
-        institution: "Gobierno Regional del Cusco",
-        category: "gobernanza",
-        categoryLabel: "🏛️ Gobernanza Territorial",
-        message: "Las Áreas de Conservación Regional no solo protegen nuestras cuencas hídricas y nevados sagrados, sino que constituyen el pilar fundamental del desarrollo sostenible y la identidad territorial de nuestras comunidades.",
-        likes: 24,
-        createdAt: new Date(Date.now() - 3600000 * 5).toISOString()
-    },
-    {
-        id: "seed-2",
-        author: "Ing. Ronald Catpo",
-        anonymous: false,
-        region: "Cusco",
-        institution: "Conservación Amazónica (ACCA)",
-        category: "finanzas",
-        categoryLabel: "💰 Sostenibilidad y MERESE",
-        message: "Es urgente consolidar mecanismos financieros innovadores como los fondos de retribución por servicios ecosistémicos (MERESE) y bonos de biodiversidad para garantizar la sostenibilidad a largo plazo de las 5 ACR cusqueñas.",
-        likes: 19,
-        createdAt: new Date(Date.now() - 3600000 * 12).toISOString()
-    },
-    {
-        id: "seed-3",
-        author: "Ing. Milagros Gonzales Saldaña",
-        anonymous: false,
-        region: "Loreto",
-        institution: "Gobierno Regional de Loreto",
-        category: "comunidad",
-        categoryLabel: "🤝 Liderazgo Comunitario",
-        message: "El verdadero éxito de la conservación radica en el empoderamiento de las mujeres y líderes locales. Desde la Amazonía compartimos el compromiso de fortalecer la cogestión comunitaria.",
-        likes: 31,
-        createdAt: new Date(Date.now() - 3600000 * 20).toISOString()
-    },
-    {
-        id: "seed-4",
-        author: "Reg. Wilberto Carbajal Farfán",
-        anonymous: false,
-        region: "Cusco",
-        institution: "Comité de Gestión ACR Q'eros-Kosñipata",
-        category: "declaracion",
-        categoryLabel: "📜 Declaración del Cusco",
-        message: "Proponemos que la Declaración del Cusco 2026 reconozca formalmente los saberes ancestrales de la Nación Q'eros como patrimonio biocultural y herramienta viva para la adaptación al cambio climático.",
-        likes: 42,
-        createdAt: new Date(Date.now() - 3600000 * 28).toISOString()
-    },
-    {
-        id: "seed-5",
-        author: "Ing. Salomón Rodrigo Huaman Bartolo",
-        anonymous: false,
-        region: "Tumbes",
-        institution: "Gobierno Regional de Tumbes",
-        category: "bioeconomia",
-        categoryLabel: "🍯 Bioeconomía y Miel",
-        message: "Los bionegocios y la producción sostenible de miel de abeja nativa demuestran que conservar el bosque genera empleo digno y bienestar para las familias de los valles y zonas de amortiguamiento.",
-        likes: 16,
-        createdAt: new Date(Date.now() - 3600000 * 36).toISOString()
-    },
-    {
-        id: "seed-6",
-        author: "Blga. María Taco",
-        anonymous: false,
-        region: "Cusco",
-        institution: "GORE Cusco / Monitoreo de Fauna",
-        category: "biodiversidad",
-        categoryLabel: "🦅 Monitoreo y Fauna",
-        message: "El registro de cachorros de oso de anteojos y gato andino en nuestras cámaras trampa confirma la excelente salud ecológica de los corredores biológicos entre Choquequirao, Ausangate y Kosñipata.",
-        likes: 27,
-        createdAt: new Date(Date.now() - 3600000 * 48).toISOString()
-    }
-];
+// Sin opiniones de ejemplo inducidas (mural limpio)
+const SEED_OPINIONS = [];
 
 // Estado en Memoria
 let opinionsState = [];
@@ -115,12 +42,15 @@ function getLocalOpinions() {
     try {
         const stored = localStorage.getItem('congreso_acr_opiniones');
         if (stored) {
-            return JSON.parse(stored);
+            const parsed = JSON.parse(stored);
+            // Filtrar y descartar cualquier opinión previa de ejemplo (id que empiece con "seed-")
+            const userOnly = Array.isArray(parsed) ? parsed.filter(op => op && op.id && !op.id.startsWith('seed-')) : [];
+            return userOnly;
         }
     } catch (e) {
         console.warn('Error reading localStorage:', e);
     }
-    return SEED_OPINIONS;
+    return [];
 }
 
 function saveLocalOpinions(opinions) {
@@ -241,7 +171,18 @@ function renderOpinions() {
 
     if (filtered.length === 0) {
         grid.innerHTML = '';
-        if (noResults) noResults.style.display = 'block';
+        if (noResults) {
+            noResults.style.display = 'block';
+            const titleEl = noResults.querySelector('h4');
+            const descEl = noResults.querySelector('p');
+            if (opinionsState.length === 0) {
+                if (titleEl) titleEl.textContent = 'El Muro de Voces está listo para recibir tu opinión';
+                if (descEl) descEl.textContent = 'Aún no se han registrado opiniones. ¡Sé el primero en compartir tu propuesta o reflexión para la conservación regional!';
+            } else {
+                if (titleEl) titleEl.textContent = 'No se encontraron opiniones con esos filtros';
+                if (descEl) descEl.textContent = 'Prueba cambiando los filtros de búsqueda o comparte tu opinión sobre este tema.';
+            }
+        }
         return;
     }
 
