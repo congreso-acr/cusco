@@ -5174,7 +5174,8 @@ h1, h2, h3, h4 {
     border-radius: 10px;
     padding: 0.8rem 0.95rem;
     border: 1px solid var(--color-gray-200);
-    margin-bottom: 1rem;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .pres-avatar-icon {

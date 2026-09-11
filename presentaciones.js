@@ -803,11 +803,6 @@ function renderPresentations() {
                             ${item.institution ? `<span class="pres-speaker-inst">🏢 ${highlightedInst}</span>` : ''}
                         </div>
                     </div>
-
-                    <div class="pres-meta-info">
-                        <span class="pres-time">🕒 Horario: <strong>${item.time}</strong></span>
-                        <span class="pres-filesize">📄 PDF · ${item.size}</span>
-                    </div>
                 </div>
 
                 <div class="pres-card-footer">
