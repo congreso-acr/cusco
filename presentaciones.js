@@ -14,8 +14,8 @@ const PRESENTACIONES = [
         "title": "Las ACR en el Perú: estado situacional, avances normativos posteriores a la declaración de Cajamarca y desafíos pendientes",
         "speaker": "Ing. Edder Miguel Neyra Jaico",
         "institution": "Gobierno Regional de Cajamarca",
-        "file": "Ponencias/2_1_Edder MIguel Neyra - Las ACR estado Situacional.pdf",
-        "fileName": "2_1_Edder MIguel Neyra - Las ACR estado Situacional.pdf",
+        "file": "Ponencias/2_1_Edder MIguel Neyra - Las ACR estado Situacional2.pdf",
+        "fileName": "2_1_Edder MIguel Neyra - Las ACR estado Situacional2.pdf",
         "size": "3.1 MB",
         "keywords": [
             "cajamarca",
